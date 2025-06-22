@@ -59,8 +59,8 @@ export default function ParaguayTechLanding() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-orange-200/60 bg-white/90 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+      <header className="sticky top-0 z-50 w-full border-b border-orange-200/60 bg-white/90 backdrop-blur-xl h-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-red-500 shadow-sm">
               <Code2 className="h-5 w-5 text-white" />
@@ -90,7 +90,7 @@ export default function ParaguayTechLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center py-8 overflow-hidden">
         {/* Friendly background elements */}
         <div className="absolute top-20 right-10 w-64 h-64 bg-orange-200/30 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl" />
@@ -100,16 +100,14 @@ export default function ParaguayTechLanding() {
 
             <h1 className="mb-8 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl md:text-7xl">
               <span className="block">Hola, somos</span>
-              <span className="block bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent pb-2">
                 Paraguay Tech
               </span>
             </h1>
 
             <p className="mb-12 text-xl text-slate-700 md:text-2xl max-w-3xl mx-auto leading-relaxed">
-              Una comunidad de que aman la
-              tecnología y están siempre dispuestas a{" "}
-              darte una mano. ¿Tenés una duda? ¿Necesitás consejos?
-              ¡Acá estamos!
+              Somos una comunidad que proyecta ideas, crea conexiones valiosas y ayuda a 
+              profesionales tech a crecer. ¿Tenés ganas de ser parte?
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
