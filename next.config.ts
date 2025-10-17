@@ -28,7 +28,6 @@ const nextConfig: NextConfig = {
     keepAlive: true,
   },
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react'],
   },
   compiler: {
