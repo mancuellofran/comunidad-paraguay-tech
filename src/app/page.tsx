@@ -780,7 +780,7 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
            <div className="mx-auto max-w-4xl text-center mb-20">
              <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-white">
-               Partners y <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Sponsors</span>
+               <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Partners</span> y <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Sponsors</span>
              </h2>
              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
                Te invitamos a ser parte de nuestros eventos como partner o sponsor para que podamos mejorar nuestro contenido y traer mejores eventos tech
