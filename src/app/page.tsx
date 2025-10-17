@@ -350,68 +350,6 @@ export default function ParaguayTechLanding() {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Recursos Útiles</h2>
-            <p className="text-xl text-slate-600">Herramientas, cursos y enlaces que te van a ayudar en tu carrera tech</p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-slate-200">
-              <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 group-hover:bg-blue-200 transition-colors">
-                  <span className="text-2xl">📚</span>
-                </div>
-                <CardTitle className="text-slate-900">Cursos Gratuitos</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">Recursos de programación en español para todos los niveles</p>
-                <div className="space-y-2">
-                  <a href="https://www.freecodecamp.org/espanol/" target="_blank" rel="noopener noreferrer" className="block text-sm text-blue-600 hover:text-blue-800 transition-colors">FreeCodeCamp Español</a>
-                  <a href="https://www.youtube.com/@ParaguayTech" target="_blank" rel="noopener noreferrer" className="block text-sm text-blue-600 hover:text-blue-800 transition-colors">Paraguay Tech YouTube</a>
-                  <a href="https://platzi.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-blue-600 hover:text-blue-800 transition-colors">Platzi</a>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-slate-200">
-              <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 group-hover:bg-green-200 transition-colors">
-                  <span className="text-2xl">🛠️</span>
-                </div>
-                <CardTitle className="text-slate-900">Herramientas</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">Herramientas esenciales para desarrolladores</p>
-                <div className="space-y-2">
-                  <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-green-600 hover:text-green-800 transition-colors">Visual Studio Code</a>
-                  <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-green-600 hover:text-green-800 transition-colors">Figma</a>
-                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-green-600 hover:text-green-800 transition-colors">GitHub</a>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-slate-200">
-              <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 group-hover:bg-purple-200 transition-colors">
-                  <span className="text-2xl">💼</span>
-                </div>
-                <CardTitle className="text-slate-900">Empleos</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">Plataformas para encontrar trabajo en tech</p>
-                <div className="space-y-2">
-                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-purple-600 hover:text-purple-800 transition-colors">LinkedIn</a>
-                  <a href="https://www.computrabajo.com.py/" target="_blank" rel="noopener noreferrer" className="block text-sm text-purple-600 hover:text-purple-800 transition-colors">Computrabajo PY</a>
-                  <a href="https://remoteok.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-purple-600 hover:text-purple-800 transition-colors">RemoteOK</a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* What We Do Section */}
       <section className="py-20 bg-white">
