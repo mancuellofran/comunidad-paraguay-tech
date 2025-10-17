@@ -256,10 +256,9 @@ export default function ParaguayTechLanding() {
               </span>
             </h1>
 
-            <p className="mb-12 text-xl text-slate-700 md:text-2xl lg:text-3xl max-w-4xl mx-auto leading-relaxed font-light">
-              Somos una comunidad que <span className="font-semibold text-orange-600">proyecta ideas</span>, crea 
-              <span className="font-semibold text-blue-600"> conexiones valiosas</span> y ayuda a 
-              profesionales del ecosistema tech a <span className="font-semibold text-green-600">crecer</span>. 
+            <p className="mb-12 text-xl text-slate-700 md:text-2xl lg:text-3xl max-w-4xl mx-auto leading-relaxed">
+              Somos una comunidad que proyecta ideas, crea conexiones valiosas y ayuda a 
+              profesionales del ecosistema tech a crecer.
               <br className="hidden sm:block" />
               ¿Tenés ganas de ser parte?
             </p>
@@ -406,7 +405,7 @@ export default function ParaguayTechLanding() {
               Conocé a los <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">fundadores</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Los visionarios que crearon esta comunidad tech para conectar y ayudar a profesionales del ecosistema tech paraguayo
+              Las personas detrás de esta comunidad que creen en el poder de conectar y ayudar a otros en el mundo tech
             </p>
           </div>
 
