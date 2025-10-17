@@ -251,7 +251,7 @@ export default function ParaguayTechLanding() {
 
             <h1 id="hero-title" className="mb-8 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl md:text-7xl lg:text-8xl">
               <span className="block mb-2">Hola, somos</span>
-              <span className="block bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent pb-2 animate-gradient-x">
+              <span className="block bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent pb-2">
                 Paraguay Tech
               </span>
             </h1>
@@ -802,22 +802,22 @@ export default function ParaguayTechLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-8 border border-white/30">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 text-orange-300 rounded-full text-sm font-medium mb-8 border border-orange-500/30">
               ¿Te interesa conocernos?
             </div>
             <h2 className="text-5xl font-bold mb-8 sm:text-6xl lg:text-7xl">
-              ¿Te animás a <span className="text-yellow-300">conocernos</span>?
+              ¿Te animás a <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">conocernos</span>?
             </h2>
-            <p className="text-2xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed text-slate-300">
               Somos una comunidad abierta y siempre hay lugar para nuevas personas. 
-              <span className="font-semibold text-yellow-200"> Te invitamos a formar parte del ecosistema tech paraguayo.</span>
+              <span className="font-semibold text-orange-300"> Te invitamos a formar parte del ecosistema tech paraguayo.</span>
             </p>
             <Link 
               href="https://discord.gg/ZY5JRnTswv" 
@@ -828,7 +828,7 @@ export default function ParaguayTechLanding() {
             >
               <Button
                 size="lg"
-                className="bg-white cursor-pointer text-orange-600 hover:bg-yellow-50 text-2xl px-12 py-8 h-auto font-bold shadow-2xl hover:shadow-white/25 transition-all duration-300 rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 border-0"
+                className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-2xl px-12 py-8 h-auto font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 border-0"
               >
                 <span className="flex items-center gap-4">
                   Entrar al Discord
