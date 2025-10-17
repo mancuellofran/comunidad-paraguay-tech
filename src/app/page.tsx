@@ -191,7 +191,7 @@ export default function ParaguayTechLanding() {
         }}
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-orange-200/60 bg-white/95 backdrop-blur-xl h-16 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between">
@@ -232,11 +232,11 @@ export default function ParaguayTechLanding() {
               >
                 <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl group">
                   <span className="flex items-center gap-2">
-                    Entrar al Discord
+                Entrar al Discord
                     <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </span>
-                </Button>
-              </Link>
+              </Button>
+            </Link>
             </div>
           </nav>
 
@@ -348,12 +348,12 @@ export default function ParaguayTechLanding() {
                 aria-label="Únete a nuestra comunidad en Discord"
                 className="group"
               >
-                <Button
-                  size="lg"
+              <Button
+                size="lg"
                   className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-lg px-10 py-7 h-auto shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 border-0 font-semibold"
                 >
                   <span className="flex items-center gap-3">
-                    Entrar al Discord
+                  Entrar al Discord
                     <span className="group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
                   </span>
                 </Button>
@@ -500,11 +500,11 @@ export default function ParaguayTechLanding() {
                       />
                       <AvatarFallback className="text-xl bg-gradient-to-br from-orange-400 to-red-400 text-white font-bold">
                         {founder.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </AvatarFallback>
-                    </Avatar>
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </AvatarFallback>
+                  </Avatar>
                   </div>
                   <CardTitle className="text-2xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
                     {founder.name}
@@ -780,10 +780,10 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
            <div className="mx-auto max-w-4xl text-center mb-20">
              <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-white">
-               Conviértete en <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">partner</span>
+               Partners y <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">Sponsors</span>
              </h2>
              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
-               Te invitamos a ser parte de nuestros eventos y sumarte a la comunidad tech paraguaya
+               Te invitamos a ser parte de nuestros eventos como partner o sponsor para que podamos mejorar nuestro contenido y traer mejores eventos tech
              </p>
 
              {/* Cards ocultas temporalmente - Próximamente */}
@@ -883,12 +883,15 @@ export default function ParaguayTechLanding() {
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-4">
               <span className="text-slate-300">Escribinos a:</span>
               <a 
-                href="mailto:hola@paraguaytech.com?subject=Partnership%20Paraguay%20Tech" 
+                href="mailto:hola@paraguaytech.com?subject=Partnership%20o%20Sponsorship%20Paraguay%20Tech" 
                 className="text-orange-400 hover:text-orange-300 transition-colors font-semibold text-lg"
               >
                 hola@paraguaytech.com
               </a>
             </div>
+            <p className="text-slate-400 text-sm mt-4">
+              Para información sobre partnerships y sponsorships que nos ayuden a crear mejor contenido y eventos
+            </p>
           </div>
         </div>
       </section>
@@ -958,12 +961,12 @@ export default function ParaguayTechLanding() {
               aria-label="Únete a nuestra comunidad en Discord"
               className="group inline-block"
             >
-              <Button
-                size="lg"
+            <Button
+              size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-2xl px-12 py-8 h-auto font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 border-0"
               >
                 <span className="flex items-center gap-4">
-                  Entrar al Discord
+                Entrar al Discord
                   <span className="group-hover:translate-x-2 transition-transform duration-300 text-2xl">→</span>
                 </span>
               </Button>
@@ -1108,7 +1111,7 @@ export default function ParaguayTechLanding() {
 
       {/* Back to Top Button */}
       <BackToTop />
-      </div>
+    </div>
     </>
   )
 }
