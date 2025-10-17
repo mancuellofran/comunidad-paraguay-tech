@@ -335,10 +335,12 @@ export default function ParaguayTechLanding() {
               ¿Qué encontrás acá?
             </div>
             <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-slate-900">
-              No somos una empresa ni una escuela
+              Somos una comunidad tech
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Somos <span className="font-semibold text-orange-600">personas que se ayudan entre sí</span> para crecer juntos en el ecosistema tech
+              <span className="font-semibold text-orange-600">Personas que se ayudan entre sí</span> para crecer juntos en el ecosistema tech paraguayo. 
+              <br className="hidden sm:block" />
+              <span className="text-slate-500">Conectamos, aprendemos y crecemos juntos.</span>
             </p>
           </div>
 
@@ -701,6 +703,66 @@ export default function ParaguayTechLanding() {
         </div>
       </section>
 
+      {/* Partners Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="mx-auto max-w-4xl text-center mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 text-orange-300 rounded-full text-sm font-medium mb-6 border border-orange-500/30">
+              Partners & Colaboradores
+            </div>
+            <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-white">
+              ¿Querés ser <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">partner</span>?
+            </h2>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              Estamos buscando empresas, instituciones y organizaciones que quieran 
+              <span className="font-semibold text-orange-400"> colaborar</span> con la comunidad tech paraguaya
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-2xl">🏢</span>
+              </div>
+              <h3 className="font-semibold text-white mb-2">Empresas</h3>
+              <p className="text-sm text-slate-400">Patrociná eventos, compartí oportunidades laborales</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-2xl">🎓</span>
+              </div>
+              <h3 className="font-semibold text-white mb-2">Educación</h3>
+              <p className="text-sm text-slate-400">Colaborá con contenido educativo y workshops</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-2xl">🤝</span>
+              </div>
+              <h3 className="font-semibold text-white mb-2">Organizaciones</h3>
+              <p className="text-sm text-slate-400">Sumate a iniciativas y proyectos comunitarios</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-4">
+              <span className="text-slate-300">Escribinos a:</span>
+              <a 
+                href="mailto:hola@paraguaytech.com?subject=Partnership%20Paraguay%20Tech" 
+                className="text-orange-400 hover:text-orange-300 transition-colors font-semibold text-lg"
+              >
+                hola@paraguaytech.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-orange-50 relative overflow-hidden">
         {/* Background Elements */}
@@ -879,17 +941,17 @@ export default function ParaguayTechLanding() {
               <ul className="space-y-2 text-slate-400">
                 <li>
                   <Link href="#eventos" className="hover:text-white transition-colors">
-                    Festival Tech PY <span className="text-orange-400 text-sm">Próximamente</span>
+                    Festival Tech PY <span className="text-orange-400 text-sm">Próx... </span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    Encuesta Tech PY <span className="text-orange-400 text-sm">Próximamente</span>
+                    Encuesta Tech PY <span className="text-orange-400 text-sm">Próx... </span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    Hackathon Tech PY <span className="text-orange-400 text-sm">Próximamente</span>
+                    Hackathon Tech PY <span className="text-orange-400 text-sm">Próx... </span>
                   </Link>
                 </li>
               </ul>
