@@ -3,8 +3,18 @@ import { NextResponse } from 'next/server'
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN
 const GUILD_ID = process.env.DISCORD_GUILD_ID
 
+interface CommunityStats {
+  members: number;
+  onlineMembers: number;
+  events: number;
+  founded: number;
+  messagesPerDay: number;
+  activeChannels: number;
+}
+
 // Simple in-memory cache to prevent rate limiting
 let lastFetch = 0
+let cachedData: CommunityStats | null = null
 const CACHE_DURATION = 60000 // 60 seconds
 
 export async function GET() {
@@ -13,11 +23,11 @@ export async function GET() {
     return NextResponse.json(getFallbackStats())
   }
 
-  // Check if we should skip API call due to rate limiting
+  // Check if we should use cached data to prevent rate limiting
   const now = Date.now()
-  if (now - lastFetch < CACHE_DURATION) {
+  if (now - lastFetch < CACHE_DURATION && cachedData) {
     console.log('Using cached Discord data to prevent rate limiting')
-    return NextResponse.json(getFallbackStats())
+    return NextResponse.json(cachedData)
   }
 
   try {
@@ -40,6 +50,7 @@ export async function GET() {
       // If rate limited, wait before returning fallback
       if (guildResponse.status === 429) {
         lastFetch = now
+        // Don't cache fallback data on rate limit
         return NextResponse.json(getFallbackStats())
       }
       
@@ -88,6 +99,10 @@ export async function GET() {
       messagesPerDay: Math.floor(Math.random() * 50) + 100, // Simulated
       activeChannels: 8 // Simulated
     }
+
+    // Cache the real data
+    cachedData = stats
+    lastFetch = now
 
     return NextResponse.json(stats)
   } catch (error) {

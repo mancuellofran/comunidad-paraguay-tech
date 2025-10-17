@@ -3,8 +3,20 @@ import { NextResponse } from 'next/server'
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN
 const GUILD_ID = process.env.DISCORD_GUILD_ID
 
+interface DiscordEvent {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  location: string;
+  type: string;
+  url: string;
+  status: string;
+}
+
 // Simple in-memory cache to prevent rate limiting
 let lastFetch = 0
+let cachedData: DiscordEvent[] | null = null
 const CACHE_DURATION = 60000 // 60 seconds
 
 export async function GET() {
@@ -13,11 +25,11 @@ export async function GET() {
     return NextResponse.json(getFallbackEvents())
   }
 
-  // Check if we should skip API call due to rate limiting
+  // Check if we should use cached data to prevent rate limiting
   const now = Date.now()
-  if (now - lastFetch < CACHE_DURATION) {
+  if (now - lastFetch < CACHE_DURATION && cachedData) {
     console.log('Using cached Discord events data to prevent rate limiting')
-    return NextResponse.json(getFallbackEvents())
+    return NextResponse.json(cachedData)
   }
 
   try {
@@ -37,6 +49,7 @@ export async function GET() {
       // If rate limited, wait before returning fallback
       if (response.status === 429) {
         lastFetch = now
+        // Don't cache fallback data on rate limit
         return NextResponse.json(getFallbackEvents())
       }
       
@@ -44,9 +57,6 @@ export async function GET() {
     }
 
     const events = await response.json()
-    
-    // Update cache timestamp
-    lastFetch = now
     
     // Filter and format events
     const upcomingEvents = events
@@ -75,6 +85,10 @@ export async function GET() {
         url: `https://discord.com/events/${GUILD_ID}/${event.id}`,
         status: getEventStatus(event.scheduled_start_time)
       }))
+
+    // Cache the real data
+    cachedData = upcomingEvents
+    lastFetch = now
 
     return NextResponse.json(upcomingEvents)
   } catch (error) {
