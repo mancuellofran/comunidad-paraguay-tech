@@ -5,10 +5,27 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { YouTubeVideos } from "@/components/youtube-videos"
-import { DiscordEvents } from "@/components/discord-events"
+import dynamic from "next/dynamic"
 import { HeroStats } from "@/components/hero-stats"
 import { BackToTop } from "@/components/back-to-top"
+
+// Lazy load heavy components
+const YouTubeVideos = dynamic(() => import("@/components/youtube-videos").then(mod => ({ default: mod.YouTubeVideos })), {
+  loading: () => <div className="flex justify-center items-center space-x-4 text-slate-400">
+    <div className="h-6 bg-slate-200 rounded w-20 animate-pulse" />
+    <div className="h-6 bg-slate-200 rounded w-20 animate-pulse" />
+    <div className="h-6 bg-slate-200 rounded w-20 animate-pulse" />
+  </div>,
+  ssr: false
+})
+
+const DiscordEvents = dynamic(() => import("@/components/discord-events").then(mod => ({ default: mod.DiscordEvents })), {
+  loading: () => <div className="flex justify-center items-center space-x-4 text-slate-400">
+    <div className="h-6 bg-slate-200 rounded w-20 animate-pulse" />
+    <div className="h-6 bg-slate-200 rounded w-20 animate-pulse" />
+  </div>,
+  ssr: false
+})
 import {
   Code2,
   Github,
@@ -24,24 +41,28 @@ import {
   MessageCircle
 } from "lucide-react"
 import Link from "next/link"
-import { Suspense, useState, useEffect } from "react"
+import { Suspense, useState } from "react"
 
 export default function ParaguayTechLanding() {
   // Mobile menu state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
-  // Matrix effect state
+  // Matrix effect state - only initialize when needed
   const [matrixChars, setMatrixChars] = useState<Array<{left: number, delay: number, char: string}>>([])
+  const [isMatrixInitialized, setIsMatrixInitialized] = useState(false)
   
-  // Generate matrix characters only on client
-  useEffect(() => {
-    const chars = Array.from({length: 60}, () => ({
-      left: Math.random() * 100,
-      delay: Math.random() * 4,
-      char: Math.random() > 0.5 ? '1' : '0'
-    }))
-    setMatrixChars(chars)
-  }, [])
+  // Generate matrix characters only when needed (lazy initialization)
+  const initializeMatrix = () => {
+    if (!isMatrixInitialized) {
+      const chars = Array.from({length: 60}, () => ({
+        left: Math.random() * 100,
+        delay: Math.random() * 4,
+        char: Math.random() > 0.5 ? '1' : '0'
+      }))
+      setMatrixChars(chars)
+      setIsMatrixInitialized(true)
+    }
+  }
 
   // Structured Data for SEO
   const structuredData = {
@@ -53,12 +74,16 @@ export default function ParaguayTechLanding() {
     "logo": "https://www.paraguaytech.com/logo.png",
     "sameAs": [
       "https://discord.gg/ZY5JRnTswv",
-      "https://github.com/mancuellofran/comunidad-tech-paraguay"
+      "https://github.com/mancuellofran/comunidad-tech-paraguay",
+      "https://www.youtube.com/@ParaguayTech",
+      "https://www.instagram.com/paraguaytech_oficial/",
+      "https://www.tiktok.com/@paraguaytech"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "community support",
-      "availableLanguage": ["Spanish", "English"]
+      "availableLanguage": ["Spanish", "English"],
+      "email": "hola@paraguaytech.com"
     },
     "memberOf": {
       "@type": "Organization",
@@ -68,6 +93,38 @@ export default function ParaguayTechLanding() {
     "areaServed": {
       "@type": "Country",
       "name": "Paraguay"
+    },
+    "knowsAbout": [
+      "Desarrollo de Software",
+      "Programación",
+      "Tecnología",
+      "Inteligencia Artificial",
+      "Emprendimiento",
+      "Networking",
+      "Crecimiento Profesional",
+      "Mentoría"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de la Comunidad",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Networking Tech",
+            "description": "Conecta con profesionales del ecosistema tech paraguayo"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mentoría y Crecimiento",
+            "description": "Recibe mentoría y ayuda real de la comunidad para crecer profesionalmente"
+          }
+        }
+      ]
     }
   };
 
@@ -434,11 +491,12 @@ export default function ParaguayTechLanding() {
                     <Avatar className="h-24 w-24 mx-auto border-4 border-white/20 shadow-2xl group-hover:scale-110 transition-transform duration-300">
                       <AvatarImage 
                         src={founder.avatar} 
-                        alt={`Foto de perfil de ${founder.name}, ${founder.role} en Paraguay Tech`}
+                        alt={`${founder.name}, ${founder.role} en Paraguay Tech`}
                         loading="lazy"
                         width={96}
                         height={96}
                         className="object-cover"
+                        sizes="(max-width: 768px) 80px, 96px"
                       />
                       <AvatarFallback className="text-xl bg-gradient-to-br from-orange-400 to-red-400 text-white font-bold">
                         {founder.name
@@ -766,32 +824,35 @@ export default function ParaguayTechLanding() {
 
                  {/* Hackathon Paraguay Tech Card - Próximamente */}
                  <div className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-                   {/* Matrix Rain Effect */}
-                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                     <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-teal-500/5"></div>
-                     {/* Matrix Rain Characters */}
-                     <div className="absolute inset-0 matrix-rain" style={{
-                       backgroundImage: `radial-gradient(circle at 30% 30%, rgba(34,197,94,0.1) 0%, transparent 50%),
-                                       radial-gradient(circle at 70% 70%, rgba(16,185,129,0.1) 0%, transparent 50%),
-                                       radial-gradient(circle at 50% 20%, rgba(6,182,212,0.1) 0%, transparent 50%)`,
-                       animation: 'matrixRain 4s linear infinite'
-                     }}>
-                       <div className="absolute inset-0 text-green-400/20 text-xs font-mono leading-none overflow-hidden">
-                         {matrixChars.length > 0 && matrixChars.map((charData, i) => (
-                           <div key={i} className="absolute" style={{
-                             left: `${charData.left}%`,
-                             animationName: 'matrixFall',
-                             animationDuration: '2.5s',
-                             animationTimingFunction: 'linear',
-                             animationIterationCount: 'infinite',
-                             animationDelay: `${charData.delay}s`
-                           }}>
-                             {charData.char}
-                           </div>
-                         ))}
-                       </div>
+                 {/* Matrix Rain Effect */}
+                 <div 
+                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden"
+                   onMouseEnter={initializeMatrix}
+                 >
+                   <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-teal-500/5"></div>
+                   {/* Matrix Rain Characters */}
+                   <div className="absolute inset-0 matrix-rain" style={{
+                     backgroundImage: `radial-gradient(circle at 30% 30%, rgba(34,197,94,0.1) 0%, transparent 50%),
+                                     radial-gradient(circle at 70% 70%, rgba(16,185,129,0.1) 0%, transparent 50%),
+                                     radial-gradient(circle at 50% 20%, rgba(6,182,212,0.1) 0%, transparent 50%)`,
+                     animation: 'matrixRain 4s linear infinite'
+                   }}>
+                     <div className="absolute inset-0 text-green-400/20 text-xs font-mono leading-none overflow-hidden">
+                       {matrixChars.length > 0 && matrixChars.map((charData, i) => (
+                         <div key={i} className="absolute" style={{
+                           left: `${charData.left}%`,
+                           animationName: 'matrixFall',
+                           animationDuration: '2.5s',
+                           animationTimingFunction: 'linear',
+                           animationIterationCount: 'infinite',
+                           animationDelay: `${charData.delay}s`
+                         }}>
+                           {charData.char}
+                         </div>
+                       ))}
                      </div>
                    </div>
+                 </div>
                    
                    {/* Hackathon Icon */}
                    <div className="relative z-10 flex justify-center mb-6">

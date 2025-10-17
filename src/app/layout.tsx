@@ -6,11 +6,15 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -18,7 +22,7 @@ export const metadata: Metadata = {
     default: "Paraguay Tech - Comunidad de Desarrolladores y Tecnología",
     template: "%s | Paraguay Tech"
   },
-  description: "Únete a la comunidad tech más activa de Paraguay. Conecta con desarrolladores, comparte conocimiento, encuentra oportunidades laborales y crece profesionalmente en el mundo de la tecnología.",
+  description: "Comunidad tech de Paraguay. Conecta, aprende y crece profesionalmente. Discord, eventos, networking y mentoría en tecnología.",
   keywords: [
     "Paraguay Tech",
     "comunidad desarrolladores Paraguay",
@@ -31,7 +35,15 @@ export const metadata: Metadata = {
     "comunidad tech",
     "discord Paraguay",
     "carrera tecnología",
-    "aprendizaje programación"
+    "aprendizaje programación",
+    "hackathon Paraguay",
+    "conferencia tecnología",
+    "startups Paraguay",
+    "crecimiento profesional tech",
+    "cursos programación",
+    "mentoría desarrollo",
+    "colaboración tech",
+    "innovación Paraguay"
   ],
   authors: [{ name: "Paraguay Tech Community" }],
   creator: "Paraguay Tech Community",
@@ -50,23 +62,25 @@ export const metadata: Metadata = {
     locale: "es_PY",
     url: "https://www.paraguaytech.com",
     title: "Paraguay Tech - Comunidad de Desarrolladores y Tecnología",
-    description: "Únete a la comunidad tech más activa de Paraguay. Conecta con desarrolladores, comparte conocimiento y crece profesionalmente.",
+    description: "Comunidad tech de Paraguay. Conecta, aprende y crece profesionalmente. Discord, eventos, networking y mentoría en tecnología.",
     siteName: "Paraguay Tech",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Paraguay Tech - Comunidad de Desarrolladores",
+        alt: "Paraguay Tech - Comunidad de Tecnologia en Paraguay",
+        type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Paraguay Tech - Comunidad de Desarrolladores y Tecnología",
-    description: "Únete a la comunidad tech más activa de Paraguay. Conecta con desarrolladores, comparte conocimiento y crece profesionalmente.",
+    description: "Comunidad tech de Paraguay. Conecta, aprende y crece profesionalmente. Discord, eventos, networking y mentoría en tecnología.",
     images: ["/og-image.jpg"],
     creator: "@paraguaytech",
+    site: "@paraguaytech",
   },
   robots: {
     index: true,
