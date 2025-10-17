@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { YouTubeVideos } from "@/components/youtube-videos"
 import {
   Code2,
   Github,
@@ -111,32 +112,33 @@ export default function ParaguayTechLanding() {
             >
               La Comunidad
             </Link>
-            <Link href="#gente" className="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">
+            <Link href="#gente" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
               Fundadores
             </Link>
-            <Link href="#faq" className="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">
+            <Link href="#eventos" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+              Eventos
+            </Link>
+            <Link href="#faq" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
               Preguntas
             </Link>
-            <Link 
-              href="https://discord.gg/ZY5JRnTswv" 
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Únete a nuestra comunidad en Discord"
-            >
-              <Button className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white shadow-sm rounded-xl">
-                Entrar al Discord
-              </Button>
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link 
+                href="https://discord.gg/ZY5JRnTswv" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Únete a nuestra comunidad en Discord"
+              >
+                <Button className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white shadow-sm rounded-xl">
+                  Entrar al Discord
+                </Button>
+              </Link>
+            </div>
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center py-8 overflow-hidden">
-        {/* Friendly background elements */}
-        <div className="absolute top-20 right-10 w-64 h-64 bg-orange-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl" />
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="mx-auto max-w-4xl text-center">
 
@@ -164,12 +166,33 @@ export default function ParaguayTechLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Únete a nuestra comunidad en Discord"
+                className="group"
               >
               <Button
                 size="lg"
-                className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-lg px-8 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-200 rounded-xl"
+                className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-lg px-8 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl group-hover:scale-105 group-hover:-translate-y-1"
                 >
-                  Entrar al Discord
+                  <span className="flex items-center gap-2">
+                    Entrar al Discord
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </span>
+                </Button>
+              </Link>
+              
+              <Link 
+                href="#eventos" 
+                className="group"
+                aria-label="Ver próximos eventos"
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-8 py-6 h-auto border-orange-200 hover:border-orange-300 hover:bg-orange-50 transition-all duration-300 rounded-xl group-hover:scale-105"
+                >
+                  <span className="flex items-center gap-2">
+                    Ver Eventos
+                    <span className="group-hover:rotate-12 transition-transform duration-300">📅</span>
+                  </span>
                 </Button>
               </Link>
             </div>
@@ -282,6 +305,113 @@ export default function ParaguayTechLanding() {
         </div>
       </section>
 
+      {/* Local Tech Ecosystem Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Ecosistema Tech Paraguay</h2>
+            <p className="text-xl text-slate-600">Conectamos con el ecosistema tecnológico paraguayo</p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-2xl">🏢</span>
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Empresas</h3>
+              <p className="text-sm text-slate-600">Tigo, Personal, Banco Itaú, y startups locales</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-2xl">🎓</span>
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Universidades</h3>
+              <p className="text-sm text-slate-600">UNA, UCA, UAA, y otras instituciones</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-2xl">🚀</span>
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Startups</h3>
+              <p className="text-sm text-slate-600">Ecosistema emprendedor en crecimiento</p>
+            </div>
+
+            <div className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-2xl">🌐</span>
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Remoto</h3>
+              <p className="text-sm text-slate-600">Oportunidades de trabajo remoto global</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Recursos Útiles</h2>
+            <p className="text-xl text-slate-600">Herramientas, cursos y enlaces que te van a ayudar en tu carrera tech</p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-slate-200">
+              <CardHeader>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 group-hover:bg-blue-200 transition-colors">
+                  <span className="text-2xl">📚</span>
+                </div>
+                <CardTitle className="text-slate-900">Cursos Gratuitos</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">Recursos de programación en español para todos los niveles</p>
+                <div className="space-y-2">
+                  <a href="https://www.freecodecamp.org/espanol/" target="_blank" rel="noopener noreferrer" className="block text-sm text-blue-600 hover:text-blue-800 transition-colors">FreeCodeCamp Español</a>
+                  <a href="https://www.youtube.com/@ParaguayTech" target="_blank" rel="noopener noreferrer" className="block text-sm text-blue-600 hover:text-blue-800 transition-colors">Paraguay Tech YouTube</a>
+                  <a href="https://platzi.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-blue-600 hover:text-blue-800 transition-colors">Platzi</a>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-slate-200">
+              <CardHeader>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 group-hover:bg-green-200 transition-colors">
+                  <span className="text-2xl">🛠️</span>
+                </div>
+                <CardTitle className="text-slate-900">Herramientas</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">Herramientas esenciales para desarrolladores</p>
+                <div className="space-y-2">
+                  <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-green-600 hover:text-green-800 transition-colors">Visual Studio Code</a>
+                  <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-green-600 hover:text-green-800 transition-colors">Figma</a>
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-green-600 hover:text-green-800 transition-colors">GitHub</a>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-slate-200">
+              <CardHeader>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 group-hover:bg-purple-200 transition-colors">
+                  <span className="text-2xl">💼</span>
+                </div>
+                <CardTitle className="text-slate-900">Empleos</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">Plataformas para encontrar trabajo en tech</p>
+                <div className="space-y-2">
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-purple-600 hover:text-purple-800 transition-colors">LinkedIn</a>
+                  <a href="https://www.computrabajo.com.py/" target="_blank" rel="noopener noreferrer" className="block text-sm text-purple-600 hover:text-purple-800 transition-colors">Computrabajo PY</a>
+                  <a href="https://remoteok.com/" target="_blank" rel="noopener noreferrer" className="block text-sm text-purple-600 hover:text-purple-800 transition-colors">RemoteOK</a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* What We Do Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -297,7 +427,7 @@ export default function ParaguayTechLanding() {
               </div>
               <div>
                 <h3 className="font-semibold text-orange-900 mb-1">Programación</h3>
-                <p className="text-sm text-orange-700">JavaScript, Python, Java, C#, y lo que se te ocurra</p>
+                <p className="text-sm text-orange-700">JavaScript, Python, Java, C#, React, Node.js y tecnologías que usan las empresas paraguayas</p>
               </div>
             </div>
 
@@ -317,7 +447,7 @@ export default function ParaguayTechLanding() {
               </div>
               <div>
                 <h3 className="font-semibold text-green-900 mb-1">Carrera</h3>
-                <p className="text-sm text-green-700">Consejos, CV, entrevistas, y cómo crecer profesionalmente</p>
+                <p className="text-sm text-green-700">Consejos, CV, entrevistas en empresas como Tigo, Personal, y cómo crecer en el mercado paraguayo</p>
               </div>
             </div>
 
@@ -350,6 +480,106 @@ export default function ParaguayTechLanding() {
                 <p className="text-sm text-pink-700">Memes, noticias tech, y conversaciones de todo tipo</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section id="eventos" className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Próximos Eventos</h2>
+            <p className="text-xl text-slate-600">Meetups, workshops y actividades de la comunidad</p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-orange-200 bg-white/80">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <Badge className="bg-orange-100 text-orange-700 border-orange-200">Próximo</Badge>
+                  <span className="text-sm text-slate-500">15 Ene 2025</span>
+                </div>
+                <CardTitle className="text-slate-900">Meetup: Introducción a React</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">Aprendé los conceptos básicos de React con ejemplos prácticos</p>
+                <div className="flex items-center gap-2 text-sm text-slate-500">
+                  <span>📍</span>
+                  <span>Asunción, Paraguay</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-orange-200 bg-white/80">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <Badge className="bg-blue-100 text-blue-700 border-blue-200">Online</Badge>
+                  <span className="text-sm text-slate-500">22 Ene 2025</span>
+                </div>
+                <CardTitle className="text-slate-900">Workshop: Git y GitHub</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">Control de versiones desde cero hasta colaboración en equipo</p>
+                <div className="flex items-center gap-2 text-sm text-slate-500">
+                  <span>💻</span>
+                  <span>Discord Live</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-orange-200 bg-white/80">
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <Badge className="bg-green-100 text-green-700 border-green-200">Presencial</Badge>
+                  <span className="text-sm text-slate-500">29 Ene 2025</span>
+                </div>
+                <CardTitle className="text-slate-900">Networking: Tech Drinks</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 mb-4">Conectá con otros desarrolladores en un ambiente relajado</p>
+                <div className="flex items-center gap-2 text-sm text-slate-500">
+                  <span>🍺</span>
+                  <span>Barrio Villa Morra</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link 
+              href="https://discord.gg/ZY5JRnTswv" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold transition-colors"
+            >
+              Ver todos los eventos en Discord
+              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* YouTube Videos Section */}
+      <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Últimos Videos</h2>
+            <p className="text-xl text-slate-600">Contenido fresco de nuestro canal de YouTube</p>
+          </div>
+
+          <YouTubeVideos />
+
+          <div className="text-center mt-12">
+            <Link 
+              href="https://www.youtube.com/@ParaguayTech" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition-colors font-semibold"
+            >
+              <span className="text-xl">📺</span>
+              Ver todos los videos en YouTube
+              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </Link>
           </div>
         </div>
       </section>
