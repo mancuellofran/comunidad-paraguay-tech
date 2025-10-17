@@ -16,7 +16,10 @@ import {
   Coffee,
   Lightbulb,
   Menu,
-  X
+  X,
+  Instagram,
+  Linkedin,
+  Globe
 } from "lucide-react"
 import Link from "next/link"
 import { Suspense, useState } from "react"
@@ -59,12 +62,22 @@ export default function ParaguayTechLanding() {
       role: "Co-Fundador & Software Engineer",
       avatar: "/francisco-mancuello.webp?height=80&width=80",
       bio: "Ayudo a emprendedores a crear SaaS rentables",
+      social: {
+        instagram: "https://www.instagram.com/mancuellofran/",
+        linkedin: "https://www.linkedin.com/in/mancuellofran",
+        github: "https://github.com/mancuellofran",
+        portfolio: "https://mancuellofran.com/"
+      }
     },
     {
       name: "Michael Sahlmann",
       role: "Co-Fundador & IA Specialist",
       avatar: "/michael-sahlmann.webp?height=80&width=80",
       bio: "Potenciando negocios usando IA & Automatización 10x",
+      social: {
+        instagram: "https://www.instagram.com/michaelsahlmann/",
+        linkedin: "https://www.linkedin.com/in/michaelsahlmann"
+      }
     },
   ]
 
@@ -333,15 +346,14 @@ export default function ParaguayTechLanding() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            <Card className="group border-0 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-gradient-to-br from-orange-50 via-orange-100/50 to-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-200/20 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <Card className="group border-0 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-gradient-to-br from-orange-50 via-orange-100/50 to-white relative overflow-hidden h-full flex flex-col">
               <CardHeader className="relative z-10">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-orange-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <HandHeart className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-orange-700 transition-colors">Ayuda Real</CardTitle>
               </CardHeader>
-              <CardContent className="relative z-10">
+              <CardContent className="relative z-10 flex-1 flex flex-col justify-center">
                 <p className="text-slate-600 text-lg leading-relaxed">
                   ¿Tenés una duda técnica? ¿No sabés por dónde empezar? ¿Necesitás consejos de carrera? 
                   <span className="font-semibold text-orange-600"> Acá siempre hay alguien dispuesto a ayudarte.</span>
@@ -349,15 +361,14 @@ export default function ParaguayTechLanding() {
               </CardContent>
             </Card>
 
-            <Card className="group border-0 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-gradient-to-br from-blue-50 via-blue-100/50 to-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200/20 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <Card className="group border-0 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-gradient-to-br from-blue-50 via-blue-100/50 to-white relative overflow-hidden h-full flex flex-col">
               <CardHeader className="relative z-10">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 to-blue-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Coffee className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">Networking Genuino</CardTitle>
               </CardHeader>
-              <CardContent className="relative z-10">
+              <CardContent className="relative z-10 flex-1 flex flex-col justify-center">
                 <p className="text-slate-600 text-lg leading-relaxed">
                   Conocé gente que trabaja en empresas que te interesan, que pasó por lo mismo que vos, o que
                   <span className="font-semibold text-blue-600"> simplemente quiere hacer amigos en el ecosistema tech.</span>
@@ -365,15 +376,14 @@ export default function ParaguayTechLanding() {
               </CardContent>
             </Card>
 
-            <Card className="group border-0 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-gradient-to-br from-green-50 via-green-100/50 to-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-200/20 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+            <Card className="group border-0 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-gradient-to-br from-green-50 via-green-100/50 to-white relative overflow-hidden h-full flex flex-col">
               <CardHeader className="relative z-10">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-green-500 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Lightbulb className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">Aprendé Compartiendo</CardTitle>
               </CardHeader>
-              <CardContent className="relative z-10">
+              <CardContent className="relative z-10 flex-1 flex flex-col justify-center">
                 <p className="text-slate-600 text-lg leading-relaxed">
                   La mejor forma de aprender es enseñando. Compartí lo que sabés, por más básico que te parezca. 
                   <span className="font-semibold text-green-600"> Siempre hay alguien que lo necesita.</span>
@@ -430,7 +440,6 @@ export default function ParaguayTechLanding() {
                           .join("")}
                       </AvatarFallback>
                     </Avatar>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
                   </div>
                   <CardTitle className="text-2xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors">
                     {founder.name}
@@ -442,9 +451,56 @@ export default function ParaguayTechLanding() {
                   </div>
                 </CardHeader>
                 <CardContent className="relative z-10 p-8 pt-0">
-                  <p className="text-slate-300 text-center leading-relaxed text-lg">
+                  <p className="text-slate-300 text-center leading-relaxed text-lg mb-6">
                     {founder.bio}
                   </p>
+                  
+                  {/* Social Links */}
+                  <div className="flex justify-center space-x-3 flex-wrap gap-2">
+                    <Link
+                      href={founder.social.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group p-3 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                      aria-label={`Instagram de ${founder.name}`}
+                    >
+                      <Instagram className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </Link>
+                    
+                    <Link
+                      href={founder.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group p-3 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                      aria-label={`LinkedIn de ${founder.name}`}
+                    >
+                      <Linkedin className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </Link>
+
+                    {founder.social.github && (
+                      <Link
+                        href={founder.social.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group p-3 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                        aria-label={`GitHub de ${founder.name}`}
+                      >
+                        <Github className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-300" />
+                      </Link>
+                    )}
+
+                    {founder.social.portfolio && (
+                      <Link
+                        href={founder.social.portfolio}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group p-3 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                        aria-label={`Portafolio de ${founder.name}`}
+                      >
+                        <Globe className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-300" />
+                      </Link>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -519,68 +575,62 @@ export default function ParaguayTechLanding() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-orange-50 via-orange-100/50 to-white hover:from-orange-100 hover:to-orange-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-orange-200/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-orange-200/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-orange-50 via-orange-100/50 to-white hover:from-orange-100 hover:to-orange-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-orange-200/50 relative overflow-hidden h-full">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
                 <span className="text-2xl">💻</span>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1 flex flex-col justify-start">
                 <h3 className="font-bold text-orange-900 mb-3 text-xl group-hover:text-orange-700 transition-colors">Programación</h3>
-                <p className="text-orange-700 leading-relaxed">JavaScript, Python, Java, C#, React, Node.js y tecnologías que usan las empresas del ecosistema tech paraguayo</p>
+                <p className="text-orange-700 leading-relaxed">Tecnologías que usan las empresas del ecosistema tech paraguayo</p>
               </div>
             </div>
 
-            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-blue-50 via-blue-100/50 to-white hover:from-blue-100 hover:to-blue-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-blue-200/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-200/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-blue-50 via-blue-100/50 to-white hover:from-blue-100 hover:to-blue-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-blue-200/50 relative overflow-hidden h-full">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
                 <span className="text-2xl">🎨</span>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1 flex flex-col justify-start">
                 <h3 className="font-bold text-blue-900 mb-3 text-xl group-hover:text-blue-700 transition-colors">Diseño</h3>
                 <p className="text-blue-700 leading-relaxed">UI/UX, Figma, Adobe, y todo lo visual</p>
               </div>
             </div>
 
-            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-green-50 via-green-100/50 to-white hover:from-green-100 hover:to-green-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-green-200/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-green-200/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-green-50 via-green-100/50 to-white hover:from-green-100 hover:to-green-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-green-200/50 relative overflow-hidden h-full">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
                 <span className="text-2xl">💼</span>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1 flex flex-col justify-start">
                 <h3 className="font-bold text-green-900 mb-3 text-xl group-hover:text-green-700 transition-colors">Carrera</h3>
                 <p className="text-green-700 leading-relaxed">Consejos, CV, entrevistas y cómo crecer en el ecosistema tech paraguayo</p>
               </div>
             </div>
 
-            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-purple-50 via-purple-100/50 to-white hover:from-purple-100 hover:to-purple-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-purple-200/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-purple-200/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-purple-50 via-purple-100/50 to-white hover:from-purple-100 hover:to-purple-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-purple-200/50 relative overflow-hidden h-full">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
                 <span className="text-2xl">🚀</span>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1 flex flex-col justify-start">
                 <h3 className="font-bold text-purple-900 mb-3 text-xl group-hover:text-purple-700 transition-colors">Emprendimiento</h3>
                 <p className="text-purple-700 leading-relaxed">Ideas, startups, y cómo hacer realidad tus proyectos</p>
               </div>
             </div>
 
-            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-indigo-50 via-indigo-100/50 to-white hover:from-indigo-100 hover:to-indigo-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-indigo-200/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-200/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-indigo-50 via-indigo-100/50 to-white hover:from-indigo-100 hover:to-indigo-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-indigo-200/50 relative overflow-hidden h-full">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
                 <span className="text-2xl">🎓</span>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1 flex flex-col justify-start">
                 <h3 className="font-bold text-indigo-900 mb-3 text-xl group-hover:text-indigo-700 transition-colors">Aprendizaje</h3>
                 <p className="text-indigo-700 leading-relaxed">Cursos, recursos, y por dónde empezar a estudiar</p>
               </div>
             </div>
 
-            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-pink-50 via-pink-100/50 to-white hover:from-pink-100 hover:to-pink-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-pink-200/50 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-pink-200/20 rounded-full -translate-y-12 translate-x-12 group-hover:scale-150 transition-transform duration-500"></div>
+            <div className="group flex items-start space-x-6 p-8 rounded-3xl bg-gradient-to-br from-pink-50 via-pink-100/50 to-white hover:from-pink-100 hover:to-pink-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-pink-200/50 relative overflow-hidden h-full">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
                 <span className="text-2xl">☕</span>
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1 flex flex-col justify-start">
                 <h3 className="font-bold text-pink-900 mb-3 text-xl group-hover:text-pink-700 transition-colors">Charla Random</h3>
                 <p className="text-pink-700 leading-relaxed">Memes, noticias tech, y conversaciones de todo tipo</p>
               </div>
