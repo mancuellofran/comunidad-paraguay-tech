@@ -9,7 +9,6 @@ import { YouTubeVideos } from "@/components/youtube-videos"
 import { DiscordEvents } from "@/components/discord-events"
 import { HeroStats } from "@/components/hero-stats"
 import { BackToTop } from "@/components/back-to-top"
-import { APIStatus } from "@/components/api-status"
 import {
   Code2,
   Github,
@@ -73,7 +72,7 @@ export default function ParaguayTechLanding() {
     {
       question: "¿Qué es Paraguay Tech?",
       answer:
-        "Somos una comunidad de gente que ama la tecnología y que está siempre dispuesta a ayudar. No importa si recién empezás o si ya tenés años de experiencia, acá vas a encontrar personas que quieren darte una mano.",
+        "Somos una comunidad de profesionales del ecosistema tech que ama la tecnología y está siempre dispuesta a ayudar. No importa si recién empezás o si ya tenés años de experiencia, acá vas a encontrar personas que quieren darte una mano.",
     },
     {
       question: "¿Cómo funciona esto del networking?",
@@ -88,7 +87,7 @@ export default function ParaguayTechLanding() {
     {
       question: "¿Solo es para programadores?",
       answer:
-        "Para nada. Tenemos diseñadores, product managers, estudiantes, emprendedores, y gente curiosa de la tecnología. La diversidad nos hace más fuertes.",
+        "¡Para nada! Tenemos desarrolladores, diseñadores, product managers, estudiantes, emprendedores, y cualquier persona curiosa del ecosistema tech. La diversidad nos hace más fuertes y enriquece la comunidad.",
     },
     {
       question: "¿Cómo puedo ayudar a otros?",
@@ -248,15 +247,15 @@ export default function ParaguayTechLanding() {
             <p className="mb-12 text-xl text-slate-700 md:text-2xl lg:text-3xl max-w-4xl mx-auto leading-relaxed font-light">
               Somos una comunidad que <span className="font-semibold text-orange-600">proyecta ideas</span>, crea 
               <span className="font-semibold text-blue-600"> conexiones valiosas</span> y ayuda a 
-              profesionales tech a <span className="font-semibold text-green-600">crecer</span>. 
+              profesionales del ecosistema tech a <span className="font-semibold text-green-600">crecer</span>. 
               <br className="hidden sm:block" />
               ¿Tenés ganas de ser parte?
             </p>
             
             {/* Hidden content for SEO */}
             <div className="sr-only">
-              <h2>Comunidad de Desarrolladores en Paraguay</h2>
-              <p>Paraguay Tech es la comunidad de tecnología más activa de Paraguay. Conectamos desarrolladores, diseñadores, product managers y emprendedores para compartir conocimiento, crear oportunidades laborales y fomentar el crecimiento profesional en el sector tecnológico paraguayo.</p>
+              <h2>Comunidad Tech de Paraguay</h2>
+              <p>Paraguay Tech es la comunidad de tecnología más activa de Paraguay. Conectamos desarrolladores, diseñadores, product managers, emprendedores y profesionales tech para compartir conocimiento, crear oportunidades laborales y fomentar el crecimiento profesional en el ecosistema tecnológico paraguayo.</p>
             </div>
 
             {/* CTA Buttons */}
@@ -273,7 +272,6 @@ export default function ParaguayTechLanding() {
                   className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white text-lg px-10 py-7 h-auto shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 border-0 font-semibold"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="text-2xl">🚀</span>
                     Entrar al Discord
                     <span className="group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
                   </span>
@@ -291,8 +289,8 @@ export default function ParaguayTechLanding() {
                   className="text-lg px-10 py-7 h-auto border-2 border-slate-300 hover:border-orange-300 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 rounded-2xl group-hover:scale-105 group-hover:-translate-y-1 font-semibold text-slate-700"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="text-2xl group-hover:rotate-12 transition-transform duration-300">📅</span>
                     Ver Eventos
+                    <span className="group-hover:rotate-12 transition-transform duration-300">→</span>
                   </span>
                 </Button>
               </Link>
@@ -324,14 +322,13 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium mb-6">
-              <span className="text-lg">💡</span>
               ¿Qué encontrás acá?
             </div>
             <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-slate-900">
               No somos una empresa ni una escuela
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Somos <span className="font-semibold text-orange-600">personas que se ayudan entre sí</span> para crecer juntos en el mundo tech
+              Somos <span className="font-semibold text-orange-600">personas que se ayudan entre sí</span> para crecer juntos en el ecosistema tech
             </p>
           </div>
 
@@ -346,7 +343,7 @@ export default function ParaguayTechLanding() {
               </CardHeader>
               <CardContent className="relative z-10">
                 <p className="text-slate-600 text-lg leading-relaxed">
-                  ¿Tenés una duda de código? ¿No sabés por dónde empezar? ¿Necesitás consejos de carrera? 
+                  ¿Tenés una duda técnica? ¿No sabés por dónde empezar? ¿Necesitás consejos de carrera? 
                   <span className="font-semibold text-orange-600"> Acá siempre hay alguien dispuesto a ayudarte.</span>
                 </p>
               </CardContent>
@@ -363,7 +360,7 @@ export default function ParaguayTechLanding() {
               <CardContent className="relative z-10">
                 <p className="text-slate-600 text-lg leading-relaxed">
                   Conocé gente que trabaja en empresas que te interesan, que pasó por lo mismo que vos, o que
-                  <span className="font-semibold text-blue-600"> simplemente quiere hacer amigos en el mundo tech.</span>
+                  <span className="font-semibold text-blue-600"> simplemente quiere hacer amigos en el ecosistema tech.</span>
                 </p>
               </CardContent>
             </Card>
@@ -398,14 +395,13 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 text-orange-300 rounded-full text-sm font-medium mb-6 border border-orange-500/30">
-              <span className="text-lg">👥</span>
               Fundadores
             </div>
             <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-white">
               Conocé a los <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">fundadores</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Los visionarios que crearon esta comunidad tech para conectar y ayudar a desarrolladores paraguayos
+              Los visionarios que crearon esta comunidad tech para conectar y ayudar a profesionales del ecosistema tech paraguayo
             </p>
           </div>
 
@@ -513,7 +509,6 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 rounded-full text-sm font-medium mb-6">
-              <span className="text-lg">💬</span>
               ¿De qué hablamos?
             </div>
             <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-slate-900">
@@ -532,7 +527,7 @@ export default function ParaguayTechLanding() {
               </div>
               <div className="relative z-10">
                 <h3 className="font-bold text-orange-900 mb-3 text-xl group-hover:text-orange-700 transition-colors">Programación</h3>
-                <p className="text-orange-700 leading-relaxed">JavaScript, Python, Java, C#, React, Node.js y tecnologías que usan las empresas paraguayas</p>
+                <p className="text-orange-700 leading-relaxed">JavaScript, Python, Java, C#, React, Node.js y tecnologías que usan las empresas del ecosistema tech paraguayo</p>
               </div>
             </div>
 
@@ -554,7 +549,7 @@ export default function ParaguayTechLanding() {
               </div>
               <div className="relative z-10">
                 <h3 className="font-bold text-green-900 mb-3 text-xl group-hover:text-green-700 transition-colors">Carrera</h3>
-                <p className="text-green-700 leading-relaxed">Consejos, CV, entrevistas y cómo crecer en el mercado tech paraguayo</p>
+                <p className="text-green-700 leading-relaxed">Consejos, CV, entrevistas y cómo crecer en el ecosistema tech paraguayo</p>
               </div>
             </div>
 
@@ -606,7 +601,6 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 rounded-full text-sm font-medium mb-6">
-              <span className="text-lg">📅</span>
               Próximos Eventos
             </div>
             <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-slate-900">
@@ -626,7 +620,6 @@ export default function ParaguayTechLanding() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
-              <span className="text-2xl">🎉</span>
               Ver todos los eventos en Discord
               <span className="group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
             </Link>
@@ -646,7 +639,6 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-100 to-orange-100 text-red-700 rounded-full text-sm font-medium mb-6">
-              <span className="text-lg">📺</span>
               Últimos Videos
             </div>
             <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-slate-900">
@@ -666,7 +658,6 @@ export default function ParaguayTechLanding() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
-              <span className="text-2xl">📺</span>
               Ver todos los videos en YouTube
               <span className="group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
             </Link>
@@ -686,7 +677,6 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 rounded-full text-sm font-medium mb-6">
-              <span className="text-lg">❓</span>
               Preguntas Frecuentes
             </div>
             <h2 className="text-4xl font-bold mb-6 sm:text-5xl lg:text-6xl text-slate-900">
@@ -730,7 +720,6 @@ export default function ParaguayTechLanding() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-4xl text-center text-white">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-8 border border-white/30">
-              <span className="text-lg">🚀</span>
               ¿Te animás a entrar?
             </div>
             <h2 className="text-5xl font-bold mb-8 sm:text-6xl lg:text-7xl">
@@ -738,7 +727,7 @@ export default function ParaguayTechLanding() {
             </h2>
             <p className="text-2xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
               Somos buena onda y siempre hay lugar para una persona más. 
-              <span className="font-semibold text-yellow-200"> ¡Unite a la comunidad tech más activa de Paraguay!</span> 😊
+              <span className="font-semibold text-yellow-200"> ¡Unite al ecosistema tech más activo de Paraguay!</span> 😊
             </p>
             <Link 
               href="https://discord.gg/ZY5JRnTswv" 
@@ -752,7 +741,6 @@ export default function ParaguayTechLanding() {
                 className="bg-white cursor-pointer text-orange-600 hover:bg-yellow-50 text-2xl px-12 py-8 h-auto font-bold shadow-2xl hover:shadow-white/25 transition-all duration-300 rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 border-0"
               >
                 <span className="flex items-center gap-4">
-                  <span className="text-3xl">🎉</span>
                   Entrar al Discord
                   <span className="group-hover:translate-x-2 transition-transform duration-300 text-2xl">→</span>
                 </span>
@@ -774,7 +762,7 @@ export default function ParaguayTechLanding() {
                 <span className="text-xl font-bold">Paraguay Tech</span>
               </div>
               <p className="text-slate-300 mb-6 max-w-md">
-                Proyectando ideas, creando comunidad y ayudando a crecer.
+                Proyectando ideas, creando comunidad y ayudando a crecer en el ecosistema tech.
               </p>
               <div className="flex space-x-4">  
                 <Link
@@ -824,9 +812,6 @@ export default function ParaguayTechLanding() {
                   </Link>
                 </li>
               </ul>
-            </div>
-            <div>
-              <APIStatus />
             </div>
           </div>
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400">
