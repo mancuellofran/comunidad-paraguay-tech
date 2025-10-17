@@ -28,12 +28,22 @@ export async function GET() {
     
     // Filter and format events
     const upcomingEvents = events
-      .filter((event: any) => {
+      .filter((event: {
+        scheduled_start_time: string;
+        status: number;
+      }) => {
         const eventTime = new Date(event.scheduled_start_time)
         return eventTime > new Date() && event.status === 1 // SCHEDULED
       })
       .slice(0, 3) // Get only the next 3 events
-      .map((event: any) => ({
+      .map((event: {
+        id: string;
+        name: string;
+        description: string;
+        scheduled_start_time: string;
+        entity_metadata?: { location?: string };
+        entity_type: number;
+      }) => ({
         id: event.id,
         title: event.name,
         description: event.description || 'Evento de la comunidad Paraguay Tech',
