@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { YouTubeVideos } from "@/components/youtube-videos"
+import { DiscordEvents } from "@/components/discord-events"
 import {
   Code2,
   Github,
@@ -492,58 +493,7 @@ export default function ParaguayTechLanding() {
             <p className="text-xl text-slate-600">Meetups, workshops y actividades de la comunidad</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-orange-200 bg-white/80">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <Badge className="bg-orange-100 text-orange-700 border-orange-200">Próximo</Badge>
-                  <span className="text-sm text-slate-500">15 Ene 2025</span>
-                </div>
-                <CardTitle className="text-slate-900">Meetup: Introducción a React</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">Aprendé los conceptos básicos de React con ejemplos prácticos</p>
-                <div className="flex items-center gap-2 text-sm text-slate-500">
-                  <span>📍</span>
-                  <span>Asunción, Paraguay</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-orange-200 bg-white/80">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <Badge className="bg-blue-100 text-blue-700 border-blue-200">Online</Badge>
-                  <span className="text-sm text-slate-500">22 Ene 2025</span>
-                </div>
-                <CardTitle className="text-slate-900">Workshop: Git y GitHub</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">Control de versiones desde cero hasta colaboración en equipo</p>
-                <div className="flex items-center gap-2 text-sm text-slate-500">
-                  <span>💻</span>
-                  <span>Discord Live</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-orange-200 bg-white/80">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <Badge className="bg-green-100 text-green-700 border-green-200">Presencial</Badge>
-                  <span className="text-sm text-slate-500">29 Ene 2025</span>
-                </div>
-                <CardTitle className="text-slate-900">Networking: Tech Drinks</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 mb-4">Conectá con otros desarrolladores en un ambiente relajado</p>
-                <div className="flex items-center gap-2 text-sm text-slate-500">
-                  <span>🍺</span>
-                  <span>Barrio Villa Morra</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <DiscordEvents />
 
           <div className="text-center mt-12">
             <Link 
