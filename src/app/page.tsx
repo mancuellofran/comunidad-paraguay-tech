@@ -19,7 +19,9 @@ import {
   X,
   Instagram,
   Linkedin,
-  Globe
+  Globe,
+  Youtube,
+  MessageCircle
 } from "lucide-react"
 import Link from "next/link"
 import { Suspense, useState } from "react"
@@ -781,8 +783,8 @@ export default function ParaguayTechLanding() {
       {/* Footer */}
       <footer className="bg-slate-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div className="md:col-span-2">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-red-500">
                   <Code2 className="h-5 w-5 text-white" />
@@ -795,28 +797,99 @@ export default function ParaguayTechLanding() {
               <div className="flex space-x-4">  
                 <Link
                   href="https://github.com/mancuellofran/comunidad-tech-paraguay"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-slate-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-slate-700"
+                  aria-label="GitHub de Paraguay Tech"
                 >
                   <Github className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://www.youtube.com/@ParaguayTech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-slate-700"
+                  aria-label="YouTube de Paraguay Tech"
+                >
+                  <Youtube className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/paraguaytech_oficial/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-slate-700"
+                  aria-label="Instagram de Paraguay Tech"
+                >
+                  <Instagram className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://www.tiktok.com/@paraguaytech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-slate-700"
+                  aria-label="TikTok de Paraguay Tech"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  </svg>
+                </Link>
+                <Link
+                  href="https://chat.whatsapp.com/KpQewTWRDIJCKnJWPkkSVx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-slate-700"
+                  aria-label="WhatsApp de Paraguay Tech"
+                >
+                  <MessageCircle className="h-5 w-5" />
                 </Link>
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Comunidad</h3>
+              <h3 className="font-semibold mb-4">Redes Sociales</h3>
               <ul className="space-y-2 text-slate-400">
                 <li>
-                  <Link href="https://discord.gg/ZY5JRnTswv" target="_blank" className="hover:text-white transition-colors">
+                  <Link href="https://discord.gg/ZY5JRnTswv" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     Discord
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Reglas básicas
+                  <Link href="https://chat.whatsapp.com/KpQewTWRDIJCKnJWPkkSVx" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    WhatsApp
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.youtube.com/@ParaguayTech/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    YouTube
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.instagram.com/paraguaytech_oficial/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    Instagram
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.tiktok.com/@paraguaytech" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    TikTok
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Eventos</h3>
+              <ul className="space-y-2 text-slate-400">
+                <li>
+                  <Link href="#eventos" className="hover:text-white transition-colors">
+                    Festival Tech PY <span className="text-orange-400 text-sm">Próximamente</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    Cómo ayudar
+                    Encuesta Tech PY <span className="text-orange-400 text-sm">Próximamente</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition-colors">
+                    Hackathon Tech PY <span className="text-orange-400 text-sm">Próximamente</span>
                   </Link>
                 </li>
               </ul>
@@ -825,19 +898,12 @@ export default function ParaguayTechLanding() {
               <h3 className="font-semibold mb-4">Contacto</h3>
               <ul className="space-y-2 text-slate-400">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Sugerencias
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Reportar problema
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Colaborar
-                  </Link>
+                  <a 
+                    href="mailto:hola@paraguaytech.com" 
+                    className="hover:text-white transition-colors flex items-center gap-2"
+                  >
+                    hola@paraguaytech.com
+                  </a>
                 </li>
               </ul>
             </div>
