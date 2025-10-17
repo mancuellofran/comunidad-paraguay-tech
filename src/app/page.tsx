@@ -320,15 +320,15 @@ export default function ParaguayTechLanding() {
                 <span className="text-white text-2xl">🏢</span>
               </div>
               <h3 className="font-semibold text-slate-900 mb-2">Empresas</h3>
-              <p className="text-sm text-slate-600">Tigo, Personal, Banco Itaú, y startups locales</p>
+              <p className="text-sm text-slate-600">Conectamos con empresas locales e internacionales</p>
             </div>
 
             <div className="text-center group">
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white text-2xl">🎓</span>
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Universidades</h3>
-              <p className="text-sm text-slate-600">UNA, UCA, UAA, y otras instituciones</p>
+              <h3 className="font-semibold text-slate-900 mb-2">Educación</h3>
+              <p className="text-sm text-slate-600">Colaboramos con instituciones educativas</p>
             </div>
 
             <div className="text-center group">
@@ -448,7 +448,7 @@ export default function ParaguayTechLanding() {
               </div>
               <div>
                 <h3 className="font-semibold text-green-900 mb-1">Carrera</h3>
-                <p className="text-sm text-green-700">Consejos, CV, entrevistas en empresas como Tigo, Personal, y cómo crecer en el mercado paraguayo</p>
+                <p className="text-sm text-green-700">Consejos, CV, entrevistas y cómo crecer en el mercado tech paraguayo</p>
               </div>
             </div>
 
