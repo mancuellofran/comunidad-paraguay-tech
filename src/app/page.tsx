@@ -13,16 +13,44 @@ import {
 import Link from "next/link"
 
 export default function ParaguayTechLanding() {
-  const moderators = [
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Paraguay Tech",
+    "description": "Comunidad de desarrolladores y profesionales de tecnología en Paraguay",
+    "url": "https://www.paraguaytech.com",
+    "logo": "https://www.paraguaytech.com/logo.png",
+    "sameAs": [
+      "https://discord.gg/ZY5JRnTswv",
+      "https://github.com/mancuellofran/comunidad-tech-paraguay"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "community support",
+      "availableLanguage": ["Spanish", "English"]
+    },
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Tech Community Paraguay"
+    },
+    "foundingDate": "2025",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Paraguay"
+    }
+  };
+
+  const founders = [
     {
       name: "Francisco Mancuello",
-      role: "Software Engineer - Frontend",
+      role: "Co-Fundador & Software Engineer",
       avatar: "/francisco-mancuello.webp?height=80&width=80",
       bio: "Ayudo a emprendedores a crear SaaS rentables",
     },
     {
       name: "Michael Sahlmann",
-      role: "Inteligencia Artificial",
+      role: "Co-Fundador & IA Specialist",
       avatar: "/michael-sahlmann.webp?height=80&width=80",
       bio: "Potenciando negocios usando IA & Automatización 10x",
     },
@@ -57,7 +85,16 @@ export default function ParaguayTechLanding() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-orange-200/60 bg-white/90 backdrop-blur-xl h-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between">
@@ -75,12 +112,17 @@ export default function ParaguayTechLanding() {
               La Comunidad
             </Link>
             <Link href="#gente" className="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">
-              Nuestra Gente
+              Fundadores
             </Link>
             <Link href="#faq" className="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">
               Preguntas
             </Link>
-            <Link href="https://discord.gg/ZY5JRnTswv" target="_blank">
+            <Link 
+              href="https://discord.gg/ZY5JRnTswv" 
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Únete a nuestra comunidad en Discord"
+            >
               <Button className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white shadow-sm rounded-xl">
                 Entrar al Discord
               </Button>
@@ -109,9 +151,20 @@ export default function ParaguayTechLanding() {
               Somos una comunidad que proyecta ideas, crea conexiones valiosas y ayuda a 
               profesionales tech a crecer. ¿Tenés ganas de ser parte?
             </p>
+            
+            {/* Hidden content for SEO */}
+            <div className="sr-only">
+              <h2>Comunidad de Desarrolladores en Paraguay</h2>
+              <p>Paraguay Tech es la comunidad de tecnología más activa de Paraguay. Conectamos desarrolladores, diseñadores, product managers y emprendedores para compartir conocimiento, crear oportunidades laborales y fomentar el crecimiento profesional en el sector tecnológico paraguayo.</p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <Link href="https://discord.gg/ZY5JRnTswv" target="_blank">
+              <Link 
+                href="https://discord.gg/ZY5JRnTswv" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Únete a nuestra comunidad en Discord"
+              >
               <Button
                 size="lg"
                 className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-lg px-8 py-6 h-auto shadow-lg hover:shadow-xl transition-all duration-200 rounded-xl"
@@ -187,37 +240,41 @@ export default function ParaguayTechLanding() {
       <section id="gente" className="py-20 bg-gradient-to-br from-orange-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Moderadores y Creadores</h2>
+            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Fundadores</h2>
             <p className="text-xl text-slate-600">
-              Conocé a las personas que hacen posible esta comunidad.
+              Conocé a los fundadores de esta comunidad tech.
             </p>
           </div>
 
           <div className="gap-8 flex flex-wrap justify-center">
-            {moderators.map((moderator, index) => (
+            {founders.map((founder, index) => (
               <Card
                 key={index}
                 className="border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm w-[280px]"
               >
                 <CardHeader className="text-center">
                   <Avatar className="h-20 w-20 mx-auto mb-4 border-2 border-white shadow-lg">
-                    <AvatarImage src={moderator.avatar} alt={moderator.name} />
+                    <AvatarImage 
+                      src={founder.avatar} 
+                      alt={`Foto de perfil de ${founder.name}, ${founder.role} en Paraguay Tech`}
+                      loading="lazy"
+                    />
                     <AvatarFallback className="text-lg bg-gradient-to-br from-orange-400 to-red-400 text-white font-semibold">
-                      {moderator.name
+                      {founder.name
                         .split(" ")
                         .map((n) => n[0])
                         .join("")}
                     </AvatarFallback>
                   </Avatar>
-                  <CardTitle className="text-lg text-slate-900 min-h-[28px]">{moderator.name}</CardTitle>
+                  <CardTitle className="text-lg text-slate-900 min-h-[28px]">{founder.name}</CardTitle>
                   <div className="flex justify-center">
                     <Badge className="bg-orange-100 text-orange-700 border-orange-200 font-normal">
-                      {moderator.role}
+                      {founder.role}
                     </Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-slate-600 text-pretty min-h-[40px]">{moderator.bio}</p>
+                  <p className="text-sm text-slate-600 text-pretty min-h-[40px]">{founder.bio}</p>
                 </CardContent>
               </Card>
             ))}
@@ -332,7 +389,12 @@ export default function ParaguayTechLanding() {
             <p className="text-xl mb-8 opacity-90">
               Dale, no seas tímido. Somos buena onda y siempre hay lugar para una persona más 😊
             </p>
-            <Link href="https://discord.gg/ZY5JRnTswv" target="_blank">
+            <Link 
+              href="https://discord.gg/ZY5JRnTswv" 
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Únete a nuestra comunidad en Discord"
+            >
             <Button
               size="lg"
               className="bg-white cursor-pointer text-orange-600 hover:bg-orange-50 text-lg px-8 py-6 h-auto font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-xl"
@@ -413,6 +475,7 @@ export default function ParaguayTechLanding() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   )
 }

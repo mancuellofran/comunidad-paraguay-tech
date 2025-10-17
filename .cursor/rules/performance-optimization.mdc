@@ -1,0 +1,158 @@
+---
+globs: src/**/*.tsx,src/**/*.ts,next.config.ts
+description: Performance optimization guidelines
+---
+
+# Performance Optimization Guidelines
+
+## Core Web Vitals Targets
+- **LCP (Largest Contentful Paint)**: < 2.5s
+- **FID (First Input Delay)**: < 100ms
+- **CLS (Cumulative Layout Shift)**: < 0.1
+
+## Image Optimization
+
+### Next.js Image Component
+- Use `next/image` for all images
+- Include proper `alt` attributes
+- Set appropriate `width` and `height`
+- Use `loading="lazy"` for below-fold images
+- Consider `priority` for above-fold images
+
+### Image Formats
+- **WebP**: Primary format for better compression
+- **AVIF**: For modern browsers (fallback to WebP)
+- **JPEG/PNG**: Fallback for older browsers
+- Use responsive images with `sizes` attribute
+
+### Example Implementation
+```tsx
+<AvatarImage 
+  src={moderator.avatar} 
+  alt={`Foto de perfil de ${moderator.name}`}
+  loading="lazy"
+  width={80}
+  height={80}
+/>
+```
+
+## Font Optimization
+
+### Google Fonts
+- Use `next/font/google` for automatic optimization
+- Preload critical fonts
+- Use `display: 'swap'` for better loading
+- Subset fonts when possible
+
+### Current Implementation
+```tsx
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+  display: 'swap',
+});
+```
+
+## Bundle Optimization
+
+### Code Splitting
+- Use dynamic imports for large components
+- Implement route-based code splitting
+- Lazy load non-critical components
+- Use React.lazy() for component splitting
+
+### Tree Shaking
+- Import only needed functions
+- Use ES modules
+- Avoid importing entire libraries
+- Use specific imports from packages
+
+## Caching Strategies
+
+### Static Assets
+- Use proper cache headers
+- Implement CDN caching
+- Use versioned assets
+- Cache static content aggressively
+
+### API Responses
+- Implement proper cache headers
+- Use ISR (Incremental Static Regeneration)
+- Cache at multiple levels
+- Use stale-while-revalidate pattern
+
+## Performance Monitoring
+
+### Vercel Analytics
+- Monitor Core Web Vitals
+- Track user experience metrics
+- Analyze performance trends
+- Set up alerts for regressions
+
+### Performance Budgets
+- **JavaScript**: < 250KB initial bundle
+- **CSS**: < 50KB initial bundle
+- **Images**: < 1MB total
+- **Fonts**: < 100KB total
+
+## Optimization Techniques
+
+### Critical CSS
+- Inline critical CSS
+- Defer non-critical CSS
+- Use CSS-in-JS for dynamic styles
+- Minimize unused CSS
+
+### JavaScript Optimization
+- Minimize bundle size
+- Use code splitting
+- Implement proper caching
+- Avoid blocking JavaScript
+
+### Network Optimization
+- Use HTTP/2
+- Implement proper compression
+- Minimize redirects
+- Use resource hints (preload, prefetch)
+
+## Mobile Performance
+
+### Mobile-First Approach
+- Design for mobile first
+- Optimize for touch interactions
+- Use appropriate viewport settings
+- Test on real devices
+
+### Touch Optimization
+- Use appropriate touch targets (44px minimum)
+- Implement proper touch feedback
+- Avoid hover-only interactions
+- Test touch performance
+
+## Monitoring and Debugging
+
+### Performance Tools
+- Google PageSpeed Insights
+- GTmetrix
+- WebPageTest
+- Chrome DevTools
+
+### Real User Monitoring
+- Track actual user performance
+- Monitor different devices and networks
+- Analyze performance by geography
+- Set up performance alerts
+
+## Build Optimization
+
+### Next.js Configuration
+- Use proper build optimizations
+- Configure compression
+- Set up proper caching
+- Optimize bundle analysis
+
+### Build Process
+- Use production builds for testing
+- Analyze bundle size
+- Remove unused code
+- Optimize dependencies

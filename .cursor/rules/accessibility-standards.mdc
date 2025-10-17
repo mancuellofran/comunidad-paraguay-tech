@@ -1,0 +1,112 @@
+---
+globs: src/**/*.tsx,src/**/*.ts
+description: Accessibility standards and guidelines
+---
+
+# Accessibility Standards for Paraguay Tech
+
+## WCAG 2.1 AA Compliance
+Ensure all components meet WCAG 2.1 AA standards for accessibility.
+
+## Semantic HTML
+- Use proper heading hierarchy (H1 → H2 → H3)
+- Use semantic elements (nav, main, section, article, aside, footer)
+- Include proper landmarks for screen readers
+- Use lists (ul, ol) for related items
+
+## ARIA Attributes
+### Required ARIA Labels
+- **aria-label**: For interactive elements without visible text
+- **aria-describedby**: For additional context
+- **aria-expanded**: For collapsible content
+- **aria-hidden**: For decorative elements
+- **role**: When semantic HTML isn't sufficient
+
+### Example Implementation
+```tsx
+<Link 
+  href="https://discord.gg/ZY5JRnTswv" 
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Únete a nuestra comunidad en Discord"
+>
+  <Button>Entrar al Discord</Button>
+</Link>
+```
+
+## Image Accessibility
+### Alt Text Requirements
+- **Descriptive**: Include context and purpose
+- **Concise**: Keep under 125 characters
+- **Meaningful**: Describe what's important about the image
+- **Empty alt**: Use alt="" for decorative images
+
+### Example
+```tsx
+<AvatarImage 
+  src={moderator.avatar} 
+  alt={`Foto de perfil de ${moderator.name}, ${moderator.role} en Paraguay Tech`}
+  loading="lazy"
+/>
+```
+
+## Keyboard Navigation
+- Ensure all interactive elements are keyboard accessible
+- Use proper tab order
+- Include focus indicators
+- Implement skip links for main content
+- Handle focus management in modals/dropdowns
+
+## Color and Contrast
+- Maintain 4.5:1 contrast ratio for normal text
+- Maintain 3:1 contrast ratio for large text
+- Don't rely solely on color to convey information
+- Test with color blindness simulators
+
+## Screen Reader Support
+### Hidden Content for SEO
+Use screen reader only content for additional context:
+```tsx
+<div className="sr-only">
+  <h2>Comunidad de Desarrolladores en Paraguay</h2>
+  <p>Additional context for screen readers and SEO</p>
+</div>
+```
+
+### Focus Management
+- Ensure focus is visible and logical
+- Manage focus in dynamic content
+- Provide focus indicators
+- Handle focus trapping in modals
+
+## Form Accessibility
+- Use proper form labels
+- Include field descriptions
+- Provide error messages
+- Use proper input types
+- Include required field indicators
+
+## Testing Accessibility
+### Manual Testing
+- Test with keyboard only navigation
+- Use screen reader software
+- Check color contrast ratios
+- Validate HTML structure
+
+### Automated Testing
+- Use axe-core for automated testing
+- Include accessibility tests in CI/CD
+- Monitor accessibility metrics
+- Regular accessibility audits
+
+## Language and Localization
+- Use proper lang attributes
+- Include language changes in content
+- Use proper date/time formats
+- Consider RTL languages if needed
+
+## Performance and Accessibility
+- Ensure fast loading times
+- Provide loading states
+- Use progressive enhancement
+- Include fallbacks for JavaScript features

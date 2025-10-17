@@ -1,0 +1,100 @@
+---
+globs: src/app/**/*.tsx,src/app/**/*.ts
+description: Next.js specific patterns and best practices
+---
+
+# Next.js 15 Patterns and Best Practices
+
+## App Router Structure
+This project uses Next.js 15 with the App Router. Follow these patterns:
+
+### File-based Routing
+- **Pages**: [src/app/page.tsx](mdc:src/app/page.tsx) - Home page
+- **Layout**: [src/app/layout.tsx](mdc:src/app/layout.tsx) - Root layout
+- **Metadata**: Export metadata objects for SEO
+- **Sitemap**: [src/app/sitemap.ts](mdc:src/app/sitemap.ts) - Dynamic sitemap
+
+### Metadata Management
+Always export proper metadata for SEO:
+```tsx
+export const metadata: Metadata = {
+  title: "Page Title | Paraguay Tech",
+  description: "Page description with keywords",
+  // ... other metadata
+}
+```
+
+### Image Optimization
+- Use Next.js Image component for automatic optimization
+- Include proper alt text for accessibility
+- Use appropriate sizes and loading strategies
+- Consider WebP format for better performance
+
+## Performance Patterns
+
+### Font Loading
+- Use next/font/google for Google Fonts
+- Configure font variables in layout
+- Apply fonts consistently across components
+
+### Analytics
+- Use Vercel Analytics as implemented in [src/app/layout.tsx](mdc:src/app/layout.tsx)
+- Include analytics in the root layout
+- Monitor Core Web Vitals
+
+### Static Generation
+- Use static generation when possible
+- Implement proper caching strategies
+- Use revalidate for ISR when needed
+
+## SEO Patterns
+
+### Structured Data
+- Include JSON-LD structured data
+- Use proper schema.org types
+- Include organization information
+- Add contact and social media data
+
+### Sitemap Generation
+- Use dynamic sitemap generation
+- Include proper lastModified dates
+- Set appropriate changeFrequency
+- Include priority values
+
+### Robots and Manifest
+- Maintain [public/robots.txt](mdc:public/robots.txt)
+- Include [public/manifest.json](mdc:public/manifest.json) for PWA
+- Configure proper meta tags
+
+## TypeScript Patterns
+
+### Type Safety
+- Use proper TypeScript interfaces
+- Leverage Next.js built-in types
+- Use strict mode configuration
+- Implement proper error handling
+
+### API Routes (if needed)
+- Use proper HTTP methods
+- Implement error handling
+- Include proper response types
+- Use middleware when appropriate
+
+## Development Patterns
+
+### Environment Variables
+- Use .env.local for local development
+- Prefix with NEXT_PUBLIC_ for client-side variables
+- Use proper TypeScript types for env vars
+
+### Build Optimization
+- Use dynamic imports for code splitting
+- Implement proper bundle analysis
+- Optimize images and assets
+- Use proper caching headers
+
+## Deployment Considerations
+- Configure for Vercel deployment with custom domain (paraguaytech.com)
+- Use proper build commands
+- Implement proper redirects
+- Monitor performance metrics

@@ -1,0 +1,39 @@
+---
+alwaysApply: true
+description: Project structure and architecture guidelines
+---
+
+# Paraguay Tech Community - Project Structure
+
+## Project Overview
+This is a Next.js 15 project for the Paraguay Tech community website, built with TypeScript, Tailwind CSS, and shadcn/ui components.
+
+## Key Files and Structure
+- **Main page**: [src/app/page.tsx](mdc:src/app/page.tsx) - Landing page with community information
+- **Layout**: [src/app/layout.tsx](mdc:src/app/layout.tsx) - Root layout with metadata and fonts
+- **Global styles**: [src/app/globals.css](mdc:src/app/globals.css) - Tailwind CSS configuration
+- **Components**: [src/components/ui/](mdc:src/components/ui/) - shadcn/ui component library
+- **Utils**: [src/lib/utils.ts](mdc:src/lib/utils.ts) - Utility functions (cn helper)
+- **Config**: [components.json](mdc:components.json) - shadcn/ui configuration
+
+## SEO and Performance
+- **Sitemap**: [src/app/sitemap.ts](mdc:src/app/sitemap.ts) - Dynamic sitemap generation
+- **Manifest**: [public/manifest.json](mdc:public/manifest.json) - PWA configuration
+- **Robots**: [public/robots.txt](mdc:public/robots.txt) - Search engine directives
+- **Static sitemap**: [public/sitemap.xml](mdc:public/sitemap.xml) - Static sitemap fallback
+
+## Technology Stack
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui with Radix UI primitives
+- **Icons**: Lucide React
+- **Analytics**: Vercel Analytics
+- **Fonts**: Geist Sans and Geist Mono
+
+## Key Features
+- Responsive design with mobile-first approach
+- SEO optimized with structured data (JSON-LD)
+- PWA capabilities with manifest
+- Accessibility features (ARIA labels, semantic HTML)
+- Performance optimized (lazy loading, proper meta tags)

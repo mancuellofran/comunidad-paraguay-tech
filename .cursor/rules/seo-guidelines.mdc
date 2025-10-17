@@ -1,0 +1,64 @@
+---
+globs: *.tsx,*.ts,*.js,*.jsx
+description: SEO best practices and guidelines
+---
+
+# SEO Guidelines for Paraguay Tech
+
+## Metadata Requirements
+Always include comprehensive metadata for SEO optimization:
+
+### Required Meta Tags
+- **Title**: Include "Paraguay Tech" and relevant keywords
+- **Description**: 150-160 characters with target keywords
+- **Keywords**: Include Paraguay-specific tech terms
+- **Open Graph**: Complete OG tags for social sharing
+- **Twitter Cards**: Optimized for Twitter sharing
+- **Canonical URLs**: Use https://www.paraguaytech.com as base URL
+
+### Structured Data (JSON-LD)
+- Use Organization schema for community information
+- Include contact information and social links
+- Specify geographic coverage (Paraguay)
+- Add founding date and area served
+
+## Content Optimization
+### Keywords to Target
+- "Paraguay Tech"
+- "comunidad desarrolladores Paraguay"
+- "programadores Paraguay"
+- "tecnología Paraguay"
+- "desarrollo software Paraguay"
+- "networking tech Paraguay"
+
+### Content Structure
+- Use proper heading hierarchy (H1 → H2 → H3)
+- Include target keywords naturally in content
+- Add alt text for all images with context
+- Use semantic HTML elements
+- Include hidden content for search engines when needed
+
+## Technical SEO
+### Performance
+- Implement lazy loading for images
+- Use proper rel attributes (noopener noreferrer)
+- Add aria-labels for accessibility
+- Optimize images with proper dimensions
+
+### Accessibility
+- Include descriptive alt text
+- Use proper ARIA labels
+- Ensure keyboard navigation
+- Maintain color contrast ratios
+
+## File Structure for SEO
+- Keep sitemap.xml updated
+- Maintain robots.txt with proper directives
+- Include manifest.json for PWA features
+- Use proper URL structure
+
+## Monitoring
+- Track Core Web Vitals
+- Monitor keyword rankings
+- Check Google Search Console regularly
+- Analyze user engagement metrics

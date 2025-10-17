@@ -1,0 +1,79 @@
+---
+globs: src/components/**/*.tsx,src/app/**/*.tsx
+description: Component development and UI guidelines
+---
+
+# Component Development Guidelines
+
+## shadcn/ui Components
+This project uses shadcn/ui component library. Always use existing components from [src/components/ui/](mdc:src/components/ui/) when possible.
+
+### Available Components
+- **Button**: [src/components/ui/button.tsx](mdc:src/components/ui/button.tsx)
+- **Card**: [src/components/ui/card.tsx](mdc:src/components/ui/card.tsx)
+- **Avatar**: [src/components/ui/avatar.tsx](mdc:src/components/ui/avatar.tsx)
+- **Badge**: [src/components/ui/badge.tsx](mdc:src/components/ui/badge.tsx)
+- **Accordion**: [src/components/ui/accordion.tsx](mdc:src/components/ui/accordion.tsx)
+
+## Component Patterns
+
+### Styling
+- Use Tailwind CSS classes
+- Follow the design system established in [src/app/globals.css](mdc:src/app/globals.css)
+- Use the `cn()` utility from [src/lib/utils.ts](mdc:src/lib/utils.ts) for conditional classes
+- Maintain consistent spacing and color schemes
+
+### Props and Types
+- Always define proper TypeScript interfaces
+- Use React.ComponentProps for extending HTML element props
+- Include proper default values
+- Document complex props with JSDoc comments
+
+### Accessibility
+- Include proper ARIA attributes
+- Use semantic HTML elements
+- Ensure keyboard navigation works
+- Add focus management where needed
+- Include screen reader friendly content
+
+## Design System
+
+### Colors
+- **Primary**: Orange (#f97316) and Red (#ef4444) gradients
+- **Background**: Orange-50 to Blue-50 gradients
+- **Text**: Slate-900 for headings, Slate-600/700 for body text
+- **Borders**: Slate-200 for subtle borders
+
+### Spacing
+- Use consistent spacing scale (4, 6, 8, 12, 16, 20, 24, etc.)
+- Maintain proper padding and margins
+- Use responsive spacing (sm:, md:, lg: prefixes)
+
+### Typography
+- **Headings**: Bold, proper hierarchy
+- **Body text**: Readable line heights
+- **Fonts**: Geist Sans for UI, Geist Mono for code
+
+## Component Structure
+```tsx
+// Example component structure
+interface ComponentProps {
+  // Define props with proper types
+}
+
+export function Component({ ...props }: ComponentProps) {
+  return (
+    <div className="proper-classes">
+      {/* Component content */}
+    </div>
+  )
+}
+```
+
+## Best Practices
+- Keep components focused and single-purpose
+- Use composition over inheritance
+- Implement proper error boundaries
+- Include loading states where appropriate
+- Test components thoroughly
+- Document usage examples

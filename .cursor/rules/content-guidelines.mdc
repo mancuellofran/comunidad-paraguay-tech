@@ -1,0 +1,100 @@
+---
+globs: src/app/**/*.tsx
+description: Content and copywriting guidelines
+---
+
+# Content Guidelines for Paraguay Tech
+
+## Brand Voice and Tone
+- **Friendly and approachable**: Use "vos" form and casual tone
+- **Inclusive**: Welcome all skill levels and backgrounds
+- **Supportive**: Emphasize helping and community
+- **Professional but warm**: Balance expertise with friendliness
+
+## Language and Localization
+- **Primary language**: Spanish (Paraguay)
+- **Formal address**: Use "vos" instead of "tú" or "usted"
+- **Local expressions**: Include Paraguayan expressions when appropriate
+- **Technical terms**: Use Spanish equivalents when possible
+
+## Content Structure
+
+### Headlines and Titles
+- **H1**: Main value proposition with "Paraguay Tech"
+- **H2**: Section benefits and features
+- **H3**: Specific topics or subsections
+- Include target keywords naturally
+
+### Call-to-Actions
+- **Primary CTA**: "Entrar al Discord" (consistent across site)
+- **Secondary CTAs**: "Conocer más", "Ver detalles"
+- Use action-oriented language
+- Make CTAs prominent and clear
+
+## SEO Content Strategy
+
+### Target Keywords
+- **Primary**: "Paraguay Tech"
+- **Secondary**: "comunidad desarrolladores Paraguay"
+- **Long-tail**: "comunidad de programadores en Paraguay"
+- **Local**: "tecnología Paraguay", "desarrollo software Paraguay"
+
+### Content Optimization
+- Include keywords in headings naturally
+- Use synonyms and related terms
+- Write for humans first, search engines second
+- Include local references and context
+
+## Community Messaging
+
+### Value Propositions
+- **Help and Support**: "Ayuda real" - emphasize practical assistance
+- **Networking**: "Networking genuino" - focus on authentic connections
+- **Learning**: "Aprendé compartiendo" - collaborative learning approach
+
+### FAQ Content
+- Address common concerns and questions
+- Use conversational tone
+- Include specific examples
+- Anticipate user needs
+
+## Technical Content Guidelines
+
+### Code and Technical Terms
+- Use proper Spanish technical terminology
+- Include English terms when no Spanish equivalent exists
+- Provide context for technical concepts
+- Use examples and analogies
+
+### User Experience Copy
+- **Error messages**: Helpful and constructive
+- **Loading states**: Informative and encouraging
+- **Success messages**: Celebratory and motivating
+- **Instructions**: Clear and step-by-step
+
+## Content Maintenance
+
+### Regular Updates
+- Keep community information current
+- Update member information regularly
+- Refresh FAQ content based on common questions
+- Monitor and update SEO content
+
+### Quality Assurance
+- Proofread all content
+- Check for consistency in tone
+- Verify technical accuracy
+- Test with target audience
+
+## Accessibility in Content
+- Use clear, simple language
+- Include descriptive alt text
+- Provide context for images
+- Use proper heading structure
+- Include screen reader friendly content
+
+## Social Media Integration
+- Optimize content for social sharing
+- Use engaging descriptions
+- Include relevant hashtags
+- Create shareable quotes and snippets
