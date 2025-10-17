@@ -24,7 +24,6 @@ import {
   MessageCircle
 } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { Suspense, useState, useEffect } from "react"
 
 export default function ParaguayTechLanding() {
@@ -729,181 +728,90 @@ export default function ParaguayTechLanding() {
                Te invitamos a ser parte de nuestros eventos y sumarte a la comunidad tech paraguaya
              </p>
 
-             <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-               {/* Festival Paraguay Tech Card */}
-               <div className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-                 {/* Tech Logos Floating Effect */}
-                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-pink-500/5"></div>
-                   {/* Floating Tech Logos */}
-                   <div className="absolute inset-0">
-                     {/* React Logo */}
-                     <div className="absolute top-4 left-4 w-8 h-8 animate-bounce" style={{animationDelay: '0s', animationDuration: '3s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/react.svg" 
-                         alt="React" 
-                         width={32}
-                         height={32}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
+             {/* Cards ocultas temporalmente - Próximamente */}
+             <div className="hidden">
+               <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+                 {/* Festival Paraguay Tech Card - Próximamente */}
+                 <div className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                   {/* Tech Logos Floating Effect */}
+                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-pink-500/5"></div>
+                     {/* Floating Tech Logos - Removed SVGL API calls */}
+                     <div className="absolute inset-0">
+                       {/* Tech logos placeholder - will be restored when cards are visible */}
                      </div>
-                     
-                     {/* JavaScript Logo */}
-                     <div className="absolute top-8 right-8 w-6 h-6 animate-bounce" style={{animationDelay: '0.5s', animationDuration: '2.5s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/javascript.svg" 
-                         alt="JavaScript" 
-                         width={24}
-                         height={24}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
+                   </div>
+                   
+                   {/* Festival Icon */}
+                   <div className="relative z-10 flex justify-center mb-6">
+                     <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                       <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                       </svg>
                      </div>
-                     
-                     {/* Python Logo */}
-                     <div className="absolute top-16 left-12 w-7 h-7 animate-bounce" style={{animationDelay: '1s', animationDuration: '3.5s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/python.svg" 
-                         alt="Python" 
-                         width={28}
-                         height={28}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
-                     </div>
-                     
-                     {/* Node.js Logo */}
-                     <div className="absolute top-12 right-16 w-6 h-6 animate-bounce" style={{animationDelay: '1.5s', animationDuration: '2.8s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/nodejs.svg" 
-                         alt="Node.js" 
-                         width={24}
-                         height={24}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
-                     </div>
-                     
-                     {/* TypeScript Logo */}
-                     <div className="absolute top-20 left-20 w-6 h-6 animate-bounce" style={{animationDelay: '2s', animationDuration: '3.2s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/typescript.svg" 
-                         alt="TypeScript" 
-                         width={24}
-                         height={24}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
-                     </div>
-                     
-                     {/* AWS Logo */}
-                     <div className="absolute top-6 right-4 w-8 h-8 animate-bounce" style={{animationDelay: '2.5s', animationDuration: '2.7s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/aws.svg" 
-                         alt="AWS" 
-                         width={32}
-                         height={32}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
-                     </div>
-                     
-                     {/* Docker Logo */}
-                     <div className="absolute top-24 left-8 w-7 h-7 animate-bounce" style={{animationDelay: '3s', animationDuration: '3.8s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/docker.svg" 
-                         alt="Docker" 
-                         width={28}
-                         height={28}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
-                     </div>
-                     
-                     {/* Git Logo */}
-                     <div className="absolute top-14 right-12 w-6 h-6 animate-bounce" style={{animationDelay: '3.5s', animationDuration: '2.9s'}}>
-                       <Image 
-                         src="https://api.svgl.app/svg/git.svg" 
-                         alt="Git" 
-                         width={24}
-                         height={24}
-                         className="w-full h-full opacity-30"
-                         unoptimized
-                       />
+                   </div>
+                   
+                   <div className="relative z-10 text-center">
+                     <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors">Festival Paraguay Tech</h3>
+                     <p className="text-slate-300 text-lg leading-relaxed mb-4">
+                       La mayor conferencia de tecnología de Paraguay que reúne a profesionales, 
+                       emprendedores y estudiantes del ecosistema tech.
+                     </p>
+                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 text-orange-300 rounded-full text-sm font-medium border border-orange-500/30">
+                       <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                       Anual • 1 día • Presencial
                      </div>
                    </div>
                  </div>
-                 
-                 {/* Festival Icon */}
-                 <div className="relative z-10 flex justify-center mb-6">
-                   <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                     <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                     </svg>
-                   </div>
-                 </div>
-                 
-                 <div className="relative z-10 text-center">
-                   <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors">Festival Paraguay Tech</h3>
-                   <p className="text-slate-300 text-lg leading-relaxed mb-4">
-                     La mayor conferencia de tecnología de Paraguay que reúne a profesionales, 
-                     emprendedores y estudiantes del ecosistema tech.
-                   </p>
-                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 text-orange-300 rounded-full text-sm font-medium border border-orange-500/30">
-                     <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                     Anual • 1 día • Presencial
-                   </div>
-                 </div>
-               </div>
 
-               {/* Hackathon Paraguay Tech Card */}
-               <div className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-                 {/* Matrix Rain Effect */}
-                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                   <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-teal-500/5"></div>
-                   {/* Matrix Rain Characters */}
-                   <div className="absolute inset-0 matrix-rain" style={{
-                     backgroundImage: `radial-gradient(circle at 30% 30%, rgba(34,197,94,0.1) 0%, transparent 50%),
-                                     radial-gradient(circle at 70% 70%, rgba(16,185,129,0.1) 0%, transparent 50%),
-                                     radial-gradient(circle at 50% 20%, rgba(6,182,212,0.1) 0%, transparent 50%)`,
-                     animation: 'matrixRain 4s linear infinite'
-                   }}>
-                     <div className="absolute inset-0 text-green-400/20 text-xs font-mono leading-none overflow-hidden">
-                       {matrixChars.length > 0 && matrixChars.map((charData, i) => (
-                         <div key={i} className="absolute" style={{
-                           left: `${charData.left}%`,
-                           animationName: 'matrixFall',
-                           animationDuration: '2.5s',
-                           animationTimingFunction: 'linear',
-                           animationIterationCount: 'infinite',
-                           animationDelay: `${charData.delay}s`
-                         }}>
-                           {charData.char}
-                         </div>
-                       ))}
+                 {/* Hackathon Paraguay Tech Card - Próximamente */}
+                 <div className="group relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                   {/* Matrix Rain Effect */}
+                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                     <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-teal-500/5"></div>
+                     {/* Matrix Rain Characters */}
+                     <div className="absolute inset-0 matrix-rain" style={{
+                       backgroundImage: `radial-gradient(circle at 30% 30%, rgba(34,197,94,0.1) 0%, transparent 50%),
+                                       radial-gradient(circle at 70% 70%, rgba(16,185,129,0.1) 0%, transparent 50%),
+                                       radial-gradient(circle at 50% 20%, rgba(6,182,212,0.1) 0%, transparent 50%)`,
+                       animation: 'matrixRain 4s linear infinite'
+                     }}>
+                       <div className="absolute inset-0 text-green-400/20 text-xs font-mono leading-none overflow-hidden">
+                         {matrixChars.length > 0 && matrixChars.map((charData, i) => (
+                           <div key={i} className="absolute" style={{
+                             left: `${charData.left}%`,
+                             animationName: 'matrixFall',
+                             animationDuration: '2.5s',
+                             animationTimingFunction: 'linear',
+                             animationIterationCount: 'infinite',
+                             animationDelay: `${charData.delay}s`
+                           }}>
+                             {charData.char}
+                           </div>
+                         ))}
+                       </div>
                      </div>
                    </div>
-                 </div>
-                 
-                 {/* Hackathon Icon */}
-                 <div className="relative z-10 flex justify-center mb-6">
-                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                     <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                     </svg>
+                   
+                   {/* Hackathon Icon */}
+                   <div className="relative z-10 flex justify-center mb-6">
+                     <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                       <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                       </svg>
+                     </div>
                    </div>
-                 </div>
-                 
-                 <div className="relative z-10 text-center">
-                   <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-300 transition-colors">Hackathon Paraguay Tech</h3>
-                   <p className="text-slate-300 text-lg leading-relaxed mb-4">
-                     Competencia intensiva de desarrollo donde equipos crean soluciones innovadoras 
-                     en tiempo récord usando las últimas tecnologías.
-                   </p>
-                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium border border-green-500/30">
-                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                     Intensivo • 24-48h • Presencial/Remoto
+                   
+                   <div className="relative z-10 text-center">
+                     <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-300 transition-colors">Hackathon Paraguay Tech</h3>
+                     <p className="text-slate-300 text-lg leading-relaxed mb-4">
+                       Competencia intensiva de desarrollo donde equipos crean soluciones innovadoras 
+                       en tiempo récord usando las últimas tecnologías.
+                     </p>
+                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-medium border border-green-500/30">
+                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                       Intensivo • 24-48h • Presencial/Remoto
+                     </div>
                    </div>
                  </div>
                </div>
