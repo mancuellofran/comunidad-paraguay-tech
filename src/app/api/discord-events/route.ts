@@ -21,7 +21,8 @@ export async function GET() {
     )
 
     if (!response.ok) {
-      throw new Error('Failed to fetch Discord events')
+      console.warn(`Discord API error: ${response.status} ${response.statusText}`)
+      return NextResponse.json(getFallbackEvents())
     }
 
     const events = await response.json()

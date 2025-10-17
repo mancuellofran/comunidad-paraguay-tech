@@ -4,13 +4,19 @@ const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
 const CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID
 
 export async function GET() {
+  if (!YOUTUBE_API_KEY || !CHANNEL_ID) {
+    console.warn('YouTube API credentials not found. Using fallback data.')
+    return NextResponse.json(getFallbackVideos())
+  }
+
   try {
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=3&type=video`
     )
 
     if (!response.ok) {
-      throw new Error('Failed to fetch YouTube videos')
+      console.warn(`YouTube API error: ${response.status} ${response.statusText}`)
+      return NextResponse.json(getFallbackVideos())
     }
 
     const data = await response.json()
@@ -39,9 +45,12 @@ export async function GET() {
     return NextResponse.json(videos)
   } catch (error) {
     console.error('Error fetching YouTube videos:', error)
-    
-    // Return fallback videos
-    const fallbackVideos = [
+    return NextResponse.json(getFallbackVideos())
+  }
+}
+
+function getFallbackVideos() {
+  return [
       {
         id: '1',
         title: 'Introducción a React Hooks - Tutorial Completo',
@@ -70,7 +79,4 @@ export async function GET() {
         url: 'https://www.youtube.com/@ParaguayTech'
       }
     ]
-
-    return NextResponse.json(fallbackVideos)
-  }
 }
