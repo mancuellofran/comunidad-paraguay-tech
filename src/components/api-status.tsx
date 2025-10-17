@@ -39,7 +39,7 @@ export function APIStatus() {
             discord: { status: 'error', message: 'Bot no configurado o sin permisos' }
           }))
         }
-      } catch (error) {
+      } catch {
         setStatus(prev => ({
           ...prev,
           discord: { status: 'error', message: 'Error de conexión' }
@@ -62,7 +62,7 @@ export function APIStatus() {
             youtube: { status: 'error', message: 'API key no configurada' }
           }))
         }
-      } catch (error) {
+      } catch {
         setStatus(prev => ({
           ...prev,
           youtube: { status: 'error', message: 'Error de conexión' }

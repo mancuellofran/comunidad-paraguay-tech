@@ -117,13 +117,13 @@ export default function ParaguayTechLanding() {
             >
               La Comunidad
             </Link>
-            <Link href="#gente" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+            <Link href="#gente" className="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">
               Fundadores
             </Link>
-            <Link href="#eventos" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+            <Link href="#eventos" className="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">
               Eventos
             </Link>
-            <Link href="#faq" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+            <Link href="#faq" className="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">
               Preguntas
             </Link>
             <div className="flex items-center gap-4">

@@ -3,16 +3,27 @@ import { NextResponse } from 'next/server'
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN
 const GUILD_ID = process.env.DISCORD_GUILD_ID
 
+// Simple in-memory cache to prevent rate limiting
+let lastFetch = 0
+const CACHE_DURATION = 60000 // 60 seconds
+
 export async function GET() {
   if (!DISCORD_BOT_TOKEN || !GUILD_ID) {
     console.warn('Discord credentials not found. Using fallback stats.')
     return NextResponse.json(getFallbackStats())
   }
 
+  // Check if we should skip API call due to rate limiting
+  const now = Date.now()
+  if (now - lastFetch < CACHE_DURATION) {
+    console.log('Using cached Discord data to prevent rate limiting')
+    return NextResponse.json(getFallbackStats())
+  }
+
   try {
-    // Get guild info for member count
+    // Get guild info for member count - IMPORTANT: with_counts=true is required
     const guildResponse = await fetch(
-      `https://discord.com/api/v10/guilds/${GUILD_ID}`,
+      `https://discord.com/api/v10/guilds/${GUILD_ID}?with_counts=true`,
       {
         headers: {
           'Authorization': `Bot ${DISCORD_BOT_TOKEN}`,
@@ -25,6 +36,13 @@ export async function GET() {
       console.warn(`Discord API error: ${guildResponse.status} ${guildResponse.statusText}`)
       const errorData = await guildResponse.text()
       console.warn('Discord API error details:', errorData)
+      
+      // If rate limited, wait before returning fallback
+      if (guildResponse.status === 429) {
+        lastFetch = now
+        return NextResponse.json(getFallbackStats())
+      }
+      
       return NextResponse.json(getFallbackStats())
     }
 
@@ -35,7 +53,12 @@ export async function GET() {
       name: guildData.name 
     })
 
-    // Get scheduled events count
+    // Update cache timestamp
+    lastFetch = now
+
+    // Get scheduled events count (with delay to prevent rate limiting)
+    await new Promise(resolve => setTimeout(resolve, 1000)) // 1 second delay
+
     const eventsResponse = await fetch(
       `https://discord.com/api/v10/guilds/${GUILD_ID}/scheduled-events`,
       {
