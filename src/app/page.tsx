@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { YouTubeVideos } from "@/components/youtube-videos"
 import { DiscordEvents } from "@/components/discord-events"
+import { CommunityStats } from "@/components/community-stats"
+import { BackToTop } from "@/components/back-to-top"
+import { APIStatus } from "@/components/api-status"
 import {
   Code2,
   Github,
@@ -13,6 +16,7 @@ import {
   Lightbulb
 } from "lucide-react"
 import Link from "next/link"
+import { Suspense } from "react"
 
 export default function ParaguayTechLanding() {
   // Structured Data for SEO
@@ -139,11 +143,14 @@ export default function ParaguayTechLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] flex items-center py-8 overflow-hidden">
+      <section 
+        className="relative min-h-[calc(100vh-4rem)] flex items-center py-8 overflow-hidden"
+        aria-labelledby="hero-title"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="mx-auto max-w-4xl text-center">
 
-            <h1 className="mb-8 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl md:text-7xl">
+            <h1 id="hero-title" className="mb-8 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl md:text-7xl">
               <span className="block">Hola, somos</span>
               <span className="block bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent pb-2">
                 Paraguay Tech
@@ -282,6 +289,8 @@ export default function ParaguayTechLanding() {
                       src={founder.avatar} 
                       alt={`Foto de perfil de ${founder.name}, ${founder.role} en Paraguay Tech`}
                       loading="lazy"
+                      width={80}
+                      height={80}
                     />
                     <AvatarFallback className="text-lg bg-gradient-to-br from-orange-400 to-red-400 text-white font-semibold">
                       {founder.name
@@ -350,6 +359,30 @@ export default function ParaguayTechLanding() {
         </div>
       </section>
 
+      {/* Community Stats Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Nuestra Comunidad en Números</h2>
+            <p className="text-xl text-slate-600">Crecimiento constante y actividad diaria</p>
+          </div>
+
+          <Suspense fallback={
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {[1, 2, 3, 4].map((i) => (
+                <Card key={i} className="border-orange-200 bg-white/80">
+                  <CardContent className="p-6 text-center">
+                    <div className="h-8 bg-slate-200 rounded animate-pulse mb-2" />
+                    <div className="h-4 bg-slate-200 rounded w-20 mx-auto animate-pulse" />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          }>
+            <CommunityStats />
+          </Suspense>
+        </div>
+      </section>
 
       {/* What We Do Section */}
       <section className="py-20 bg-white">
@@ -587,12 +620,18 @@ export default function ParaguayTechLanding() {
                 </li>
               </ul>
             </div>
+            <div>
+              <APIStatus />
+            </div>
           </div>
           <div className="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400">
             <p>&copy; {new Date().getFullYear()} Paraguay Tech. Hecho con ❤️ por gente que le gusta ayudar.</p>
           </div>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      <BackToTop />
       </div>
     </>
   )

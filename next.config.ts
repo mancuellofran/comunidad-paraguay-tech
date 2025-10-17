@@ -16,7 +16,14 @@ const nextConfig: NextConfig = {
         pathname: '/vi/**',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
   },
+  experimental: {
+    optimizeCss: true,
+  },
+  compress: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;
