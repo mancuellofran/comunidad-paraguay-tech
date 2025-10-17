@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { YouTubeVideos } from "@/components/youtube-videos"
 import { DiscordEvents } from "@/components/discord-events"
-import { CommunityStats } from "@/components/community-stats"
+import { HeroStats } from "@/components/hero-stats"
 import { BackToTop } from "@/components/back-to-top"
 import { APIStatus } from "@/components/api-status"
 import {
@@ -204,6 +204,21 @@ export default function ParaguayTechLanding() {
                 </Button>
               </Link>
             </div>
+
+
+            {/* Community Stats Footer */}
+            <div className="mb-16">
+              <Suspense fallback={
+                <div className="flex justify-center items-center space-x-8 text-slate-400">
+                  <div className="h-4 bg-slate-200 rounded w-16 animate-pulse" />
+                  <div className="h-4 bg-slate-200 rounded w-16 animate-pulse" />
+                  <div className="h-4 bg-slate-200 rounded w-16 animate-pulse" />
+                  <div className="h-4 bg-slate-200 rounded w-16 animate-pulse" />
+                </div>
+              }>
+                <HeroStats />
+              </Suspense>
+            </div>
           </div>
         </div>
       </section>
@@ -359,30 +374,6 @@ export default function ParaguayTechLanding() {
         </div>
       </section>
 
-      {/* Community Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 sm:text-4xl text-slate-900">Nuestra Comunidad en Números</h2>
-            <p className="text-xl text-slate-600">Crecimiento constante y actividad diaria</p>
-          </div>
-
-          <Suspense fallback={
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {[1, 2, 3, 4].map((i) => (
-                <Card key={i} className="border-orange-200 bg-white/80">
-                  <CardContent className="p-6 text-center">
-                    <div className="h-8 bg-slate-200 rounded animate-pulse mb-2" />
-                    <div className="h-4 bg-slate-200 rounded w-20 mx-auto animate-pulse" />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          }>
-            <CommunityStats />
-          </Suspense>
-        </div>
-      </section>
 
       {/* What We Do Section */}
       <section className="py-20 bg-white">
